@@ -1,0 +1,55 @@
+backend:
+  name: git-gateway
+  branch: master # O 'master', dependiendo de tu rama principal en GitHub
+  repo: briankill4/israelWebfolio
+  local_backend: true # Eliminar o establecer en false para producción
+  
+
+media_folder: "src/uploads" # Location where files will be stored in the repo
+public_folder: "src/uploads" # The src attribute for uploaded media
+
+collections:
+  - label: "Procedural Blog"
+    name: "RND" # Este 'name' es para la colección, no entra en conflicto con el 'name' del backend
+    
+    label_singular: 'Post'
+    description: >
+      Ideas, pruebas y obsesiones que emergen donde se cruzan la creatividad y la tecnología.
+    folder: "content/blog"
+    create: true
+    slug: "{{slug}}"
+    summary: '{{title}} -- {{year}}/{{month}}/{{day}}'
+    view_filters:
+      - label: Posts With Index
+        field: title
+        pattern: 'This is post #'
+      - label: Posts Without Index
+        field: title
+        pattern: front matter post
+      - label: Drafts
+        field: draft
+        pattern: true
+    fields:
+      - {label: "Título", name: "title", widget: "string"}
+      - {label: "tagline", name: "tagline", widget: "string"}
+      - {label: "promt", name: "promt", widget: "string"}
+      - {label: "Imagen Destacada", name: "thumbnail", widget: "image", required: false}
+      
+      - label: "Gallery"
+        name: "galleryImages"
+        widget: "list"
+        summary: '{{fields.image}}'
+        field: {label: Image, name: image, widget: image}
+
+      - {label: "Cuerpo", name: "body", widget: "markdown", hint: 'Todo el contenido va aquí'}
+      - {label: "Autor", name: "author", widget: "string", default: "by Israel paucar"}
+      - {label: "References", name: "ref", widget: "markdown", hint: 'Aqui van las referencias'}
+      - {label: "time-read", name: "time-read", widget: "number", default: 2, value_type: "int"}
+      - {
+          label: 'Publish Date',
+          name: 'date',
+          widget: 'datetime',
+          format: 'YYYY-MM-DD HH:mm',
+          default: '{{now}}'
+        }
+      - {label: "Etiquetas", name: "tags", widget: "list", required: false}
