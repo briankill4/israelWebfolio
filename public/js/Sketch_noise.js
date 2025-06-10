@@ -73,6 +73,7 @@ function setup() {
   
   //runstats
   //runStats();
+  background(30);
 }
 
 function draw() {
