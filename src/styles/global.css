@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme{
+    --color-brand: #007FFF;
+    --color-bblue: #244CE4;
+    --color-byellow: #FAC748;
+    --color-text: #040F16;
+
+
+}
+
+*{
+    font-family: "inter";
+}
+
+/* UI por encima del canvas */
+#landing-ui {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  pointer-events: auto;
+  gap: 1rem;
+  z-index: 10; /* siempre sobre el canvas */
+}
+
+/* Botones estilo limpio */
+#landing-ui button {
+  font-family: 'Inter', sans-serif;/*los botones tiene estilos def asi q hay q redundar*/
+  font-weight: 100;
+  white-space: nowrap;
+  color: #9bc7f9;
+  background: none;
+  border: none;
+  padding: 0.3rem 1.5rem;
+  font-size: clamp(1rem, 4.5vw, 7rem);
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s, transform 0.4s, color 0.2s, font-weight 0.5s ease;
+  
+}
+
+#landing-ui:hover button:not(:hover) {
+  opacity: 0.3;
+  color: #ffffff;
+}
+
+#landing-ui button:hover {
+  opacity: 0.9;
+  transform: scale(1.2);
+  color: #ffffff;
+  font-weight: 500;
+}
+
+
+/*skecth control*/
+
+/* Posición del switch en pantalla */
+#sketch-control {
+  position: fixed;
+  top: 4rem;
+  left: 1rem;
+  z-index: 49;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+#sketch-control.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+/* Estilo general del switch */
+.switch-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #e0e0e0;
+  cursor: pointer;
+}
+
+/* Ocultar el input real */
+.switch-label input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* Estilo del "slider" */
+.switch-slider {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  background-color: #4b3eff;
+  border-radius: 20px;
+  transition: background-color 0.3s;
+
+}
+
+/* Botón interior (círculo blanco) */
+.switch-slider::before {
+  content: "";
+  position: absolute;
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  top: 3px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+/* Cambios al estar activado */
+.switch-label input:checked + .switch-slider {
+  background-color: #ff5151;
+}
+
+.switch-label input:checked + .switch-slider::before {
+  transform: translateX(20px);
+}
+
+/* Texto al lado del switch */
+.switch-text {
+  font-weight: 400;
+}
