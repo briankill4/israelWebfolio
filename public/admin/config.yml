@@ -5,8 +5,8 @@ backend:
   local_backend: true # Eliminar o establecer en false para producción
   
 
-media_folder: "/src/uploads" # Location where files will be stored in the repo
-public_folder: "/src/uploads" # The src attribute for uploaded media
+media_folder: "public/uploads" # Location where files will be stored in the repo
+public_folder: "/uploads" # The src attribute for uploaded media
 
 collections:
   - label: "Procedural Blog"
