@@ -3,7 +3,7 @@ title: Mi web y una aventura
 tagline: Las intrincada carrera a crear un espacio donde compartir mis ideas
 promt: "Promp: hombre gritando desesperado rodeado de un mar de html, y del
   centro de su corazon nace una luz."
-thumbnail: /src/uploads/un-hombre-muriendo-en-el-mar.jpg
+thumbnail: /uploads/un-hombre-muriendo-en-el-mar.jpg
 author: Israel Paucar
 refe:
   - link: https://www.maxencewolff.com/
@@ -26,6 +26,6 @@ Warner Bros. Animation, Cartoon Network Studios, and Hanna-Barbera Studios Europ
 
 Cartoon Network Studios revealed that *Steven Universe: Lars of the Stars*, a follow-up to *Steven Universe*, is currently in development for Prime Video. From executive producers Rebecca Sugar and Ian Jones-Quartey, *Lars of the Stars* follows Lars Barriga, eternal teenager and space outlaw, as he and his pirate crew smuggle contraband, evade the authorities, and uncover the darkest secrets of the fallen Gem Empire.
 
-![a man lost](/src/uploads/viví-para-contarlo.jpg "perdido en el mar")
+![a man lost](/uploads/viví-para-contarlo.jpg "perdido en el mar")
 
 Additionally, *Teen Titans Go!,* the longest running animated series in DC history, has been renewed for a 10th season on Cartoon Network. In the upcoming season, Robin, Starfire, Cyborg, Beast Boy, and Raven continue the fun with new comedic adventures. Inspired by and featuring the principal voice cast of the original *Teen Titans* series, the character-driven comedy focuses on the funny that happens in between saving the world and living together as teenagers without adult supervision. Luke Cormican, Peggy Regan, and Sam Register executive produce
