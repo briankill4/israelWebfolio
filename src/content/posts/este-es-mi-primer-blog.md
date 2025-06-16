@@ -1,15 +1,15 @@
 ---
-title: Mi web y una averntura
+title: Mi web y una aventura
 tagline: Las intrincada carrera a crear un espacio donde compartir mis ideas
 promt: "Promp: hombre gritando desesperado rodeado de un mar de html, y del
   centro de su corazon nace una luz."
 thumbnail: /src/uploads/un-hombre-muriendo-en-el-mar.jpg
-author: by Israel paucar
-ref: >-
-  1. steven
-  Universe:<https://www.awn.com/news/steven-universe-gets-sequel-teen-titans-go-season-10-greenlit>
-
-  2. AWN: <https://www.awn.com/>
+author: Israel Paucar
+refe:
+  - link: https://www.maxencewolff.com/
+    author: Masis referter - how to build a web
+  - author: Maxence WOLFF - Optimizing URL Length
+    link: https://medium.com/@maxencewolff/optimizing-url-length-with-javascript-serialization-978fd9365e0a
 time-read: 4
 date: 2025-06-11 21:17
 tags:

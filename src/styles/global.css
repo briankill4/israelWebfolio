@@ -8,9 +8,21 @@
     
 }
 
+
+
 *{
     font-family: "inter";
 
+}
+
+.prose p + p {
+  margin-top: 2em; 
+}
+
+.markdown img {
+  border-radius: 0.75rem;
+  margin: 1.5rem 0;
+  max-width: 100%;
 }
 
 /* UI por encima del canvas */

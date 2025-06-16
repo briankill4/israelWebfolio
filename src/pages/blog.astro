@@ -2,12 +2,82 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/HeaderPages.astro';
 import Footer from '../components/footer.astro';
+
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection("posts");
+
+// Ordenar por fecha
+posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
 ---
 
 <BaseLayout title="Israel Paucar | BLOG" description="Portfolio interactivo de Israel Paucar, artista VFX. Houdini artist, creative coding">
   
+  
   <header><Header page="| BLOG"/></header>
-  <main class="flex-1">...</main>
-  <footer><Footer/></footer>
+    <main class="flex-1">
+      <section class="w-3/4 mx-auto bg-white dark:bg-gray-900 py-14">
+        <!-- Title Section -->
+        <div class="text-left py-10">
+          <h1 class="text-4xl font-bold text-black dark:text-white mb-4">Procedural Blog<span class="cursor">_</span></h1>
+          <style>
+          .titulo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            font-family: monospace;
+          }
+          .cursor {
+            animation: blink 1s steps(1) infinite;
+          }
+          @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+          }
+        </style>
+          <p class="text-lg text-gray-600 dark:text-gray-400">Ideas y experimentos nacidos del cruce entre creatividad y computadoras.</p>
+        </div>
+        
+      <div class="px-8 mx-auto lg:max-w-screen-xl sm:max-w-xl md:max-w-full">
+        <div class="grid gap-x-8 gap-y-10 sm:gap-y-16 md:grid-cols-2 lg:grid-cols-3">
+          {posts.map(post => (
+            <div class="relative">
+              <a href={`/blog/${post.slug}`} class="block overflow-hidden group rounded-xl shadow-lg">
+                <img 
+                  src={post.data.thumbnail} 
+                  class="object-cover w-full h-56 transition-all duration-300 ease-out sm:h-64 group-hover:scale-110" 
+                  alt={post.data.title}
+                  title={post.data.promt} 
+                />
+              </a>
+              <div class="relative mt-5">
+                <p class="uppercase text-xs mb-2.5 text-text">
+                  {new Date(post.data.date).toLocaleDateString('es-ES', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                  })} - <span class="text-xs">🕒</span> 
+                    {post.data["time-read"]} min read
+                </p>
+                <a href={`/blog/${post.slug}`} class="block mb-3">
+                  <h2 class="text-2xl font-bold leading-5 text-black dark:text-white transition-colors duration-200 hover:text-bblue dark:hover:text-bblue">
+                    {post.data.title}
+                  </h2>
+                </a>
+                <p class="mb-2 text-gray-700 dark:text-gray-300">
+                  {post.data.tagline}
+                </p>
+                <p class="mb-4 text-gray-700 dark:text-gray-300">
+                  {post.data.tags.map(tag => (
+                  <span class="mr-2 text-sm px-2 py-1 bg-blue-200 text-blue-800 rounded">{tag}</span>
+                  ))}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+      </section>
+    </main>
+  <footer><Footer /></footer>
 
 </BaseLayout>

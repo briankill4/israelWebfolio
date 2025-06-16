@@ -33,21 +33,17 @@ collections:
       - {label: "tagline", name: "tagline", widget: "string"}
       - {label: "promt", name: "promt", widget: "string"}
       - {label: "Imagen Destacada", name: "thumbnail", widget: "image", required: false}
-      
-      - label: "Gallery"
-        name: "galleryImages"
-        widget: "list"
-        summary: '{{fields.image}}'
-        field: {label: Image, name: image, widget: image}
-
       - {label: "Cuerpo", name: "body", widget: "markdown", hint: 'Todo el contenido va aquí'}
       - {label: "Autor", name: "author", widget: "string", default: "by Israel paucar"}
 
-      - label: "references"
-        name: "ref"
+      - label: "Reference"
+        name: "refe"
         widget: "list"
-        summary: '{{fields.text}}'
-        field: {label: Referencias, name: text, widget: string}
+        summary: '{{fields.ref}}'
+        fields: 
+          - {label: Autor, name: author, widget: string }
+          - {label: Link, name: link, widget: string}
+
 
       - {label: "time-read", name: "time-read", widget: "number", default: 2, value_type: "int"}
       - {

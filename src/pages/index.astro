@@ -2,6 +2,14 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/footer.astro';
+
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection("posts");
+
+// Ordenar por fecha
+posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
+
 ---
 
 <BaseLayout title="Israel Paucar | VFX Artist" description="Portfolio interactivo de Israel Paucar, artista VFX. Houdini artist, creative coding">
@@ -60,12 +68,42 @@ import Footer from '../components/footer.astro';
         <div class="photo w-full md:w-1/2 flex justify-center">
           <img src="ruta-a-tu-foto.jpg" alt="Personal photo of Israel Paucar, VFX Artist, Houdini artist." class="rounded-lg max-w-xs w-full object-cover" />
         </div>
+        
 
       </div>
     </div>
+<div class="px-4 sm:px-8 mx-auto max-w-screen-xl">
+  <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">
+    My Recent Posts
+  </h2>
 
-
-    
+  <div class="w-3/4 mx-auto grid justify-center gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-30">
+    {posts.map(post => (
+      <a 
+        href={`/blog/${post.slug}`} 
+        class="block border border-gray-200 hover:border-gray-800 dark:border-gray-700 rounded-xl px-6 py-5 shadow-sm hover:shadow-md transition group w-[320px] sm:w-[360px]"
+      >
+        <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
+          {new Date(post.data.date).toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric',
+          })}
+        </p>
+        <h2 class="text-lg font-semibold text-black dark:text-white mb-2 group-hover:text-bblue transition">
+          {post.data.title}
+        </h2>
+        <p class="text-gray-700 dark:text-gray-300 text-sm mb-4">
+          {post.data.tagline}
+        </p>
+        <p class="text-xs text-gray-400 flex items-center gap-2">
+          <span>by {post.data.author}</span> · <span>{post.data["time-read"]} min read</span>
+        </p>
+      </a>
+    ))}
+  </div>
+</div>
+ 
     <script src="/js/Sketch_noise.js" defer></script>
     <script src="/js/sketch-control.js" defer></script>
   </main>
