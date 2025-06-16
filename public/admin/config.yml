@@ -11,7 +11,7 @@ public_folder: "/src/uploads" # The src attribute for uploaded media
 collections:
   - label: "Procedural Blog"
     name: "RND" # Este 'name' es para la colección, no entra en conflicto con el 'name' del backend
-    
+    folder: "src/content/posts"
     label_singular: 'Post'
     description: >
       Ideas, pruebas y obsesiones que emergen donde se cruzan la creatividad y la tecnología.
