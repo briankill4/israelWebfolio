@@ -42,7 +42,13 @@ collections:
 
       - {label: "Cuerpo", name: "body", widget: "markdown", hint: 'Todo el contenido va aquí'}
       - {label: "Autor", name: "author", widget: "string", default: "by Israel paucar"}
-      - {label: "References", name: "ref", widget: "markdown", hint: 'Aqui van las referencias'}
+
+      - label: "references"
+        name: "ref"
+        widget: "list"
+        summary: '{{fields.text}}'
+        field: {label: Referencias, name: text, widget: string}
+
       - {label: "time-read", name: "time-read", widget: "number", default: 2, value_type: "int"}
       - {
           label: 'Publish Date',
