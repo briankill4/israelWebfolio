@@ -52,12 +52,10 @@
   background: none;
   border: none;
   padding: 0.3rem 1.5rem;
-  font-size: clamp(1rem, 4.5vw, 7rem);
+  font-size: clamp(4rem, 6vw, 10rem);
   cursor: pointer;
   opacity: 0.8;
   transition: opacity 0.2s, transform 0.4s, color 0.2s, font-weight 0.5s ease;
-  
-  
 }
 
 #landing-ui:hover button:not(:hover) {

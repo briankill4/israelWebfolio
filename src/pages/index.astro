@@ -17,15 +17,22 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
   <header><Header/></header>
   <main class="flex-1 overflow-x-hidden">
     <section id="landing" class="relative w-full h-screen">
-      <div id="p5-container" class="w-full h-full absolute top-0 left-0 z-0 bg-black"></div>
+      <div id="p5-container" class="w-full h-full absolute top-0 left-0 z-0 bg-text">
+        <div class="absolute bottom-4 left-4 z-10 text-sm text-white max-w-xs bg-black/40 backdrop-blur-xs p-3 rounded-md">
+         "Thousands of particles are simulated in real time, following organic patterns. When a word is selected, they align to form it on screen. This sketch was made using p5.js, a creative JavaScript library."
+        </div>
+      </div>
+      
 
       <div id="sketch-control">
           <label class="switch-label" title="Detiene la simulación de fondo para ahorrar recursos">
             <input type="checkbox" id="toggle-sketch" />
             <span class="switch-slider"></span>
             <span class="switch-text">Stop Particle Simulation</span>
+            
           </label>
         </div>
+        
       <!-- Botones inferiores -->
       <div id="landing-ui">
         <button id="btn-reel" onclick="location.href='/reel'">REEL</button>
@@ -33,6 +40,7 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
         <button id="btn-projects" onclick="location.href='/blog'">BLOG</button>
         <button id="btn-contact" onclick="location.href='/contact'">CONTACT</button>
       </div>
+
     </section>
     <div id="about-me" class=" w-9/10 mx-auto flex justify-center py-20">
       <div class="about-box w-full max-w-5xl bg-white/10 backdrop-blur-md rounded-xl shadow-lg p-8 flex flex-col md:flex-row items-center gap-10">
@@ -42,7 +50,7 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
           <p class="text-xl font-semibold text-[3rem]">Hello! 👋</p>
           <p>
             I'm Isra, a Houdini artist from Ecuador. Passionate about the blend of art, science, and tech.
-            VFX work for Disney, HBO, Apple TV+, and more.
+            VFX work for Disney, HBO, Netflix, Apple TV+, and more.
           </p>
 
           <div class="social-links flex gap-4 mt-4">
