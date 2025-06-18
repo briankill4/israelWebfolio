@@ -9,17 +9,20 @@ import Contacto from '../components/contacto.astro';
   
   <header><Header page="CONTACT"/></header>
   <main class="flex-1 m-auto py-25">
-    <div class="about-box w-full max-w-5xl  bg-white/10 backdrop-blur-md  shadow-lg p-8 flex flex-col md:flex-row items-center gap-10">
+    <div class="about-box w-full max-w-5xl  bg-white/10 shadow-lg p-8 flex flex-col md:flex-row items-center gap-8">
         
         <!-- Texto e íconos a la izquierda -->
-        <div class="info w-full md:w-1/2 text-text space-y-4 text-[2rem] font-[200]">
-          <p class="text-xl font-semibold text-[3rem]">Hello! 👋</p>
+        <div class="info w-full md:w-1/2 text-text space-y-4 text-[1.4rem] font-[200]">
+          <p class="text-xl font-semibold text-[3rem]">About me</p>
           <p>
-            I'm Isra, a Houdini artist from Ecuador. Passionate about the blend of art, science, and tech.
-            VFX work for Disney, HBO, Netflix, Apple TV+, and more.
+            I was born in Ecuador in 1989 and grew up surrounded by mountains, always curious about how things worked. As a kid, I loved taking things apart (not always a good idea) and filming with my dad’s camera.
+
+            I studied Digital Animation in Quito and later specialized in VFX in Argentina. Since then, I’ve worked on projects for Disney, Apple TV+, HBO, Netflix, and more.
+
+            Today I’m focused on blending art, science, and technology—working as a Houdini artist while studying Computer Science to grow as a creative coder.
           </p>
 
-          <div class="social-links flex gap-4 mt-4">
+          <div class="social-links flex gap-4 mt-10">
             <a href="https://github.com/briankill4" target="_blank">
               <img src="assets/icons/github-brands-solid.svg" alt="GitHub" class="w-6 h-6 hover:scale-110 transition" />
             </a>
@@ -45,8 +48,8 @@ import Contacto from '../components/contacto.astro';
         
 
       </div>
-    <Contacto/>
   </main>
+  <Contacto/>
   <footer><Footer/></footer>
 
 </BaseLayout>
