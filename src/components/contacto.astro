@@ -1,0 +1,27 @@
+---
+---
+<div class="bg-text text-lgt font-[200] mt-32 flex h-[40vh] w-full flex-col items-center justify-between bg-neutral-950 py-4 text-white  ">
+    <h2 id="hora-argentina"></h2>
+    <script>
+        const ahora = new Date();
+        const opciones = {
+        hour: 'numeric',
+        timeZone: 'America/Argentina/Buenos_Aires'
+        };
+        const hora = ahora.toLocaleTimeString('es-AR', opciones);
+        document.getElementById('hora-argentina').textContent = `Buenos Aires, AR - ${hora} h (UTC-3)`;
+    </script>
+    <section class="flex flex-col items-center">
+        <div class="overflow-hidden">
+            <h3 class="whitespace-nowrap text-[32px] lg:text-[8vw]" >Let's collaborate
+                <span class="-ml-6 hidden lg:inline-block" style="transform: rotate(12deg);">!</span>
+            </h3>
+        </div>
+        <div class="overflow-hidden">
+            <a href="mailto:fxisrap@gmail.com" target="_blank" class="inline-block hover:text-brand transition-colors duration-300" style="transform: none;">Say (hello)<!-- -->    
+            <span class="link-underline text-neutral-400 ">fxisrap@gmail.com</span>
+            </a>
+        </div>
+    </section>
+    <div></div>
+</div>

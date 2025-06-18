@@ -5,6 +5,7 @@
     --color-bblue: #244CE4;
     --color-byellow: #FAC748;
     --color-text: #040F16;
+    --color-lgt: #FFFCFF;
     
 }
 
@@ -143,3 +144,4 @@
 .switch-text {
   font-weight: 400;
 }
+

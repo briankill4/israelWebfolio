@@ -2,12 +2,51 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/HeaderPages.astro';
 import Footer from '../components/footer.astro';
+import Contacto from '../components/contacto.astro';
 ---
 
 <BaseLayout title="Israel Paucar | CONTACT" description="Portfolio interactivo de Israel Paucar, artista VFX. Houdini artist, creative coding">
   
   <header><Header page="CONTACT"/></header>
-  <main class="flex-1">...</main>
+  <main class="flex-1 m-auto py-25">
+    <div class="about-box w-full max-w-5xl  bg-white/10 backdrop-blur-md  shadow-lg p-8 flex flex-col md:flex-row items-center gap-10">
+        
+        <!-- Texto e íconos a la izquierda -->
+        <div class="info w-full md:w-1/2 text-text space-y-4 text-[2rem] font-[200]">
+          <p class="text-xl font-semibold text-[3rem]">Hello! 👋</p>
+          <p>
+            I'm Isra, a Houdini artist from Ecuador. Passionate about the blend of art, science, and tech.
+            VFX work for Disney, HBO, Netflix, Apple TV+, and more.
+          </p>
+
+          <div class="social-links flex gap-4 mt-4">
+            <a href="https://github.com/briankill4" target="_blank">
+              <img src="assets/icons/github-brands-solid.svg" alt="GitHub" class="w-6 h-6 hover:scale-110 transition" />
+            </a>
+            <a href="https://www.linkedin.com/in/israelpaucar/" target="_blank">
+              <img src="assets/icons/linkedin-brands-.svg" alt="LinkedIn" class="w-6 h-6 hover:scale-110 transition" />
+            </a>
+            <a href="https://www.instagram.com/israelpaucar.vfx/" target="_blank">
+              <img src="assets/icons/instagram-brands-solid.svg" alt="Instagram" class="w-6 h-6 hover:scale-110 transition" />
+            </a>
+            <a href="https://www.youtube.com/@IsraelPaucar-wy9cf" target="_blank">
+              <img src="assets/icons/youtube-brands-solid.svg" alt="YouTube" class="w-6 h-6 hover:scale-110 transition" />
+            </a>
+            <a href="https://vimeo.com/user3778973" target="_blank">
+              <img src="assets/icons/vimeo-brands-solid.svg" alt="Vimeo" class="w-6 h-6 hover:scale-110 transition" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Foto a la derecha -->
+        <div class="photo w-full md:w-1/2 flex justify-center">
+          <img src="ruta-a-tu-foto.jpg" alt="Personal photo of Israel Paucar, VFX Artist, Houdini artist." class="rounded-lg max-w-xs w-full object-cover" />
+        </div>
+        
+
+      </div>
+    <Contacto/>
+  </main>
   <footer><Footer/></footer>
 
 </BaseLayout>

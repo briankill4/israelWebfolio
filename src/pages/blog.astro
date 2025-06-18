@@ -37,11 +37,11 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
           <p class="text-lg text-gray-600 dark:text-gray-400">Ideas y experimentos nacidos del cruce entre creatividad y computadoras.</p>
         </div>
         
-      <div class="px-8 mx-auto lg:max-w-screen-xl sm:max-w-xl md:max-w-full">
+      <div class="px-8 mx-auto lg:max-w-screen-xl sm:max-w-xl md:max-w-full ">
         <div class="grid gap-x-8 gap-y-10 sm:gap-y-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {posts.map(post => (
             <div class="relative">
-              <a href={`/blog/${post.slug}`} class="block overflow-hidden group rounded-xl shadow-lg">
+              <a href={`/blog/${post.slug}`} class="block overflow-hidden group shadow-lg">
                 <img 
                   src={post.data.thumbnail} 
                   class="object-cover w-full h-56 transition-all duration-300 ease-out sm:h-64 group-hover:scale-110" 
@@ -59,7 +59,7 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
                     {post.data["time-read"]} min read
                 </p>
                 <a href={`/blog/${post.slug}`} class="block mb-3">
-                  <h2 class="text-2xl font-bold leading-5 text-black dark:text-white transition-colors duration-200 hover:text-bblue dark:hover:text-bblue">
+                  <h2 class="text-2xl font-bold leading-[1.5rem] leading-5 text-black dark:text-white transition-colors duration-200 hover:text-bblue dark:hover:text-bblue">
                     {post.data.title}
                   </h2>
                 </a>
@@ -68,7 +68,7 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
                 </p>
                 <p class="mb-4 text-gray-700 dark:text-gray-300">
                   {post.data.tags.map(tag => (
-                  <span class="mr-2 text-sm px-2 py-1 bg-blue-200 text-blue-800 rounded">{tag}</span>
+                  <span class="mr-2 text-xs px-2 py-1 bg-blue-200 text-blue-800 rounded">{tag}</span>
                   ))}
                 </p>
               </div>

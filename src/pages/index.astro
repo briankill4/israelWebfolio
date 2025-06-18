@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/footer.astro';
+import Contacto from '../components/contacto.astro';
 
 import { getCollection } from 'astro:content';
 
@@ -18,8 +19,9 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
   <main class="flex-1 overflow-x-hidden">
     <section id="landing" class="relative w-full h-screen">
       <div id="p5-container" class="w-full h-full absolute top-0 left-0 z-0 bg-text">
-        <div class="absolute bottom-4 left-4 z-10 text-sm text-white max-w-xs bg-black/40 backdrop-blur-xs p-3 rounded-md">
+        <div class="absolute bottom-4 left-4 z-10 text-xs text-white max-w-xs bg-black/40 backdrop-blur-xs p-3 rounded-md">
          "Thousands of particles are simulated in real time, following organic patterns. When a word is selected, they align to form it on screen. This sketch was made using p5.js, a creative JavaScript library."
+         <a href="#" class="hover:text-brand transition-colors duration-300">see more..</a> 
         </div>
       </div>
       
@@ -42,6 +44,7 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
       </div>
 
     </section>
+    
     <div id="about-me" class=" w-9/10 mx-auto flex justify-center py-20">
       <div class="about-box w-full max-w-5xl bg-white/10 backdrop-blur-md rounded-xl shadow-lg p-8 flex flex-col md:flex-row items-center gap-10">
         
@@ -111,7 +114,9 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
     ))}
   </div>
 </div>
- 
+
+<Contacto/>
+
     <script src="/js/Sketch_noise.js" defer></script>
     <script src="/js/sketch-control.js" defer></script>
   </main>
