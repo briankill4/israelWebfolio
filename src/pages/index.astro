@@ -19,7 +19,7 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
   <main class="flex-1 overflow-x-hidden">
     <section id="landing" class="relative w-full h-screen">
       <div id="p5-container" class="w-full h-full absolute top-0 left-0 z-0 bg-text">
-        <div class="absolute bottom-4 left-4 z-10 text-xs text-white max-w-xs bg-black/40 backdrop-blur-xs p-3 rounded-md">
+        <div class="absolute bottom-4 left-4 z-10 text-xs text-white max-w-xs bg-black/40 backdrop-blur-xs p-3">
          "Thousands of particles are simulated in real time, following organic patterns. When a word is selected, they align to form it on screen. This sketch was made using p5.js, a creative JavaScript library."
          <a href="#" class="hover:text-brand transition-colors duration-300">see more...</a> 
         </div>
@@ -46,7 +46,7 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
     </section>
     
     <div id="about-me" class=" w-9/10 mx-auto flex justify-center py-20">
-      <div class="about-box w-full max-w-5xl bg-white/10 backdrop-blur-md rounded-xl shadow-lg p-8 flex flex-col md:flex-row items-center gap-10">
+      <div class="about-box w-full max-w-5xl bg-white/10 shadow-lg p-8 flex flex-col md:flex-row items-center gap-10">
         
         <!-- Texto e íconos a la izquierda -->
         <div class="info w-full md:w-1/2 text-text space-y-4 text-[2rem] font-[200]">
@@ -77,7 +77,7 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
 
         <!-- Foto a la derecha -->
         <div class="photo w-full md:w-1/2 flex justify-center">
-          <img src="ruta-a-tu-foto.jpg" alt="Personal photo of Israel Paucar, VFX Artist, Houdini artist." class="rounded-lg max-w-xs w-full object-cover" />
+          <img src="/assets/Israel Paucar perfil.jpg" alt="Personal photo of Israel Paucar, VFX Artist, Houdini artist." class="rounded-[10em] max-w-xs w-full object-cover" />
         </div>
         
 
@@ -92,7 +92,7 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
     {posts.map(post => (
       <a 
         href={`/blog/${post.slug}`} 
-        class="block border border-gray-200 hover:border-gray-800 dark:border-gray-700 rounded-xl px-6 py-5 shadow-sm hover:shadow-md transition group w-[320px] sm:w-[360px]"
+        class="block border border-gray-200 hover:border-gray-800 dark:border-gray-700 rounded-xs px-6 py-5 shadow-sm hover:shadow-md transition group w-[320px] sm:w-[360px]"
       >
         <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
           {new Date(post.data.date).toLocaleDateString('en-US', {
