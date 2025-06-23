@@ -3,13 +3,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/HeaderPages.astro';
 import Footer from '../components/footer.astro';
 import Reel2023 from '../components/reel2023.astro';
-import Reel2024 from '../components/reel2023.astro';
+import Reel2024 from '../components/reel2024.astro';
 ---
 
 <BaseLayout title="Israel Paucar | REEL" description="Portfolio interactivo de Israel Paucar, artista VFX. Houdini artist, creative coding">
   
   <header><Header page="REEL"/></header>
   <main class="flex-1 py-10">
+    <Reel2024/>
     <Reel2023/>
   </main>
   <footer><Footer/></footer>
