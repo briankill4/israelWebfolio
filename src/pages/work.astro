@@ -7,7 +7,22 @@ import Footer from '../components/footer.astro';
 <BaseLayout title="Israel Paucar | WORK" description="Portfolio interactivo de Israel Paucar, artista VFX. Houdini artist, creative coding">
   
   <header><Header page=" WORK"/></header>
-  <main class="flex-1">...</main>
+<main class="px-4 mt-8">
+  {/* Timeline */}
+  <div class="mx-auto flex items-center justify-center bg-black text-lgt font-[200] h-[6vh] w-full overflow-hidden mb-4 mt-10">
+    <span class="text-[10vh] leading-none">TIMELINE</span>
+  </div>
+  <span class="text-[3vh] sm:text-[6vh] text-text leading-none">An interactive timeline that organizes my projects in chronological order, visually showcasing the evolution of my work and involvement in each one.</span>
+  <div class="w-full h-[650px] mb-6">
+    <iframe
+      src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vTHBSZNacyAzDiHEq9nXx_v2odPodec38Xx8wsKPsLfPrEO_2wFnnLNg4ygt5YSmOABLwRdxDN9t21W&font=Fjalla-Average&lang=en&start_at_end=true&initial_zoom=2&width=100%25&height=650"
+      class="w-full h-full"
+      allowfullscreen
+      frameborder="0"
+    />
+  </div>
+</main>
+
   <footer><Footer/></footer>
 
 </BaseLayout>

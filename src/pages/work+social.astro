@@ -1,0 +1,84 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/HeaderPages.astro';
+import Footer from '../components/footer.astro';
+import { parseStringPromise } from 'xml2js';
+
+let items = [];
+try {
+  const res = await fetch('https://rss-bridge.org/bridge01/?action=display&bridge=InstagramBridge&context=Username&u=israelpaucar.vfx&media_type=all&format=Mrss');
+  const xml = await res.text();
+  const data = await parseStringPromise(xml);
+  items = data?.rss?.channel?.[0]?.item?.slice(0, 6) || [];
+} catch (err) {
+  console.error('Error fetching or parsing Instagram feed:', err);
+}
+
+
+---
+
+<BaseLayout title="Israel Paucar | WORK" description="Portfolio interactivo de Israel Paucar, artista VFX. Houdini artist, creative coding">
+  
+  <header><Header page=" WORK"/></header>
+<main class="flex-1 mt-11 max-w-6xl mx-auto px-4">
+  {/* Timeline */}
+  <div class="mx-auto flex items-center justify-center bg-black text-lgt font-[200] h-[6vh] w-full overflow-hidden mb-4">
+    <span class="text-[10vh] leading-none">TIMELINE</span>
+  </div>
+
+  <div class="w-full h-[650px] mb-6">
+    <iframe
+      src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vTHBSZNacyAzDiHEq9nXx_v2odPodec38Xx8wsKPsLfPrEO_2wFnnLNg4ygt5YSmOABLwRdxDN9t21W&font=Fjalla-Average&lang=en&start_at_end=true&initial_zoom=2&width=100%25&height=650"
+      class="w-full h-full"
+      allowfullscreen
+      frameborder="0"
+    />
+  </div>
+
+  {/* Título "Últimas publicaciones" */}
+  <h2 class="text-2xl font-[900] mb-4 text-center">ÚLTIMAS PUBLICACIONES</h2>
+
+  {/* Grilla de videos */}
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    {items.map((item) => {
+      const pubDate = item.pubDate?.[0];
+      const description = item.description?.[0] || '';
+      const videoMatch = description.match(/<source src="([^"]+)"/);
+      const videoSrc = videoMatch ? videoMatch[1] : '';
+
+      const fechaFormateada = new Date(pubDate).toLocaleDateString('es-ES', {
+        year: 'numeric',
+        month: 'short',
+        day: 'numeric',
+      });
+      const title = item.title?.[0].replace(/^▶\s*/, '');
+      return (
+        <a
+          href={item.link?.[0]}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="block overflow-hidden aspect-square"
+        >
+          <div class="flex flex-col h-full" >
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-brand text-center">{title}</h3>
+              <p class="text-sm text-gray-500 dark:text-gray-400 text-center mt-1">{fechaFormateada}</p>
+            </div>
+            <video
+              controls
+              muted
+              loop
+              src={videoSrc}
+              class="w-full h-full object-cover"
+              preload="metadata"
+            />
+          </div>
+        </a>
+      );
+    })}
+  </div>
+</main>
+
+  <footer><Footer/></footer>
+
+</BaseLayout>
