@@ -78,12 +78,12 @@ const shareText = encodeURIComponent(`Mirá este post: ${post.data.title}`);
         “{post.data.tagline}”
       </p>
 
-      <div class="w-9/10 mx-auto grid justify-center sm:text-lg text-xl  markdown prose dark:prose-invert max-w-none mt-6 mb-6">
+      <div class="w-9/10 mx-auto grid justify-center sm:text-lg text-xl markdown prose dark:prose-invert max-w-none mt-6 mb-6">
         <Content />
       </div>
       {post.data.refe && (
         <section class="font-[400] text-sm text-gray-500 mt-10 prose dark:prose-invert mb-6">
-          <h2>Referencias</h2>
+          <p class="font-[300] text-size[1rem] text-gray-600">Referencias</p>
           <ul>
             {post.data.refe.map((item) => (
               <li>

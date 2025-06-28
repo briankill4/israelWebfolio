@@ -66,9 +66,9 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
                 <p class="mb-2 text-gray-700 dark:text-gray-300">
                   {post.data.tagline}
                 </p>
-                <p class="mb-4 text-gray-700 dark:text-gray-300">
+                <p class="flex flex-wrap gap-1 mb-4 text-gray-700 dark:text-gray-300">
                   {post.data.tags.map(tag => (
-                  <span class="mr-2 text-xs px-2 py-1 bg-blue-200 text-blue-800 rounded">{tag}</span>
+                  <span class="mr-2 text-xs px-2 py-1 bg-gray-300 text-blue-800 rounded">{tag}</span>
                   ))}
                 </p>
               </div>
