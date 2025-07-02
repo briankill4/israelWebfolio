@@ -9,11 +9,26 @@ import Footer from '../components/footer.astro';
   <header><Header page=" WORK"/></header>
 <main class="px-4 mt-8">
   {/* Timeline */}
-  <div class="mx-auto flex items-center justify-center bg-black text-lgt font-[200] h-[6vh] w-full overflow-hidden mb-4 mt-10">
-    <span class="text-[10vh] leading-none">TIMELINE</span>
+  <div class="mx-auto flex items-center justify-center bg-black/10 text-text dark:text-lgt font-[600] h-[7vh] w-full overflow-hidden mb-4 mt-10">
+    <span class="text-[3vh] leading-none">Timeline
+    <span class="cursor">_</span></span>
+          <style>
+          .titulo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            font-family: monospace;
+          }
+          .cursor {
+            animation: blink 1s steps(1) infinite;
+          }
+          @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+          }
+        </style>
   </div>
-  <span class="text-[3vh] sm:text-[6vh] text-text leading-none">An interactive timeline that organizes my projects in chronological order, visually showcasing the evolution of my work and involvement in each one.</span>
-  <div class="w-full h-[650px] mb-6">
+  <span class="text-[3vh] sm:text-[4.5vh] dark:text-lgt text-text leading-none">An interactive timeline that organizes my projects in chronological order, visually showcasing the evolution of my work and involvement in each one.</span>
+  <div class="w-full h-[650px] mt-4 mb-6">
     <iframe
       src="https://cdn.knightlab.com/libs/timeline3/latest/embed/index.html?source=v2%3A2PACX-1vTHBSZNacyAzDiHEq9nXx_v2odPodec38Xx8wsKPsLfPrEO_2wFnnLNg4ygt5YSmOABLwRdxDN9t21W&font=Fjalla-Average&lang=en&start_at_end=true&initial_zoom=2&width=100%25&height=650"
       class="w-full h-full"

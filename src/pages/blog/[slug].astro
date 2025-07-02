@@ -32,7 +32,7 @@ const shareText = encodeURIComponent(`Mirá este post: ${post.data.title}`);
   <header><Header page={post.data.title}/></header>
   <main class="flex-1">
     <article class="w-9/10 mx-auto prose dark:prose-invert mx-auto max-w-3xl py-20">
-      <div class=" text-5xl font-[800] text-black dark:text-white ">{post.data.title}</div>
+      <div class=" text-5xl font-[800] text-black dark:text-lgt ">{post.data.title}</div>
 
       <div class="flex items-center gap-1 sm:gap-4 mt-6 mb-2">
         <img
@@ -49,7 +49,7 @@ const shareText = encodeURIComponent(`Mirá este post: ${post.data.title}`);
           href="https://www.instagram.com/israelpaucar.vfx/" 
           target="_blank" 
           rel="noopener noreferrer"
-          class="px-3 py-1 text-sm text-white bg-gradient-to-r from-blue-500 to-gray-800 rounded-full shadow hover:shadow-lg transition"
+          class="px-3 py-1 text-sm text-lgt bg-gradient-to-r from-blue-500 to-gray-800 rounded-full shadow hover:shadow-lg transition"
         >
           Follow
         </a>
@@ -70,24 +70,24 @@ const shareText = encodeURIComponent(`Mirá este post: ${post.data.title}`);
         src={post.data.thumbnail} 
         alt={post.data.title} 
         title={post.data.promt}
-        class="mb-6 mt-7  shadow-md w-3/4 mx-auto grid justify-center "
+        class="mb-6 mt-7 shadow-md w-3/4 mx-auto grid justify-center "
       />
 
 
-      <p class="w-2/4 mx-auto justify-center text-center font-[200] italic text-xl font-light text-gray-600 mb-6">
+      <p class="w-2/4 mx-auto dark:text-lgt/80 justify-center text-center font-[200] italic text-xl font-light text-gray-600 mb-6">
         “{post.data.tagline}”
       </p>
 
-      <div class="w-9/10 mx-auto grid justify-center sm:text-lg text-xl markdown prose dark:prose-invert max-w-none mt-6 mb-6">
+      <div class="w-9/10 mx-auto grid dark:text-lgt/90 justify-center sm:text-lg text-xl markdown prose dark:prose-invert max-w-none mt-6 mb-6">
         <Content />
       </div>
       {post.data.refe && (
         <section class="font-[400] text-sm text-gray-500 mt-10 prose dark:prose-invert mb-6">
-          <p class="font-[300] text-size[1rem] text-gray-600">Referencias</p>
+          <p class="font-[300] text-size[1rem] dark:text-lgt/50 text-gray-500">Referencias</p>
           <ul>
             {post.data.refe.map((item) => (
               <li>
-                <a href={item.link} target="_blank" rel="noopener noreferrer" class="text-blue-500 hover:underline">
+                <a href={item.link} target="_blank" rel="noopener noreferrer" class="dark:text-bblue text-blue-500 hover:underline">
                   {item.author}
                 </a>
               </li>
@@ -96,12 +96,12 @@ const shareText = encodeURIComponent(`Mirá este post: ${post.data.title}`);
         </section>
       )}
       {post.data.tags.map(tag => (
-        <span class="mr-2 text-sm px-2 py-1 bg-purple-200 text-purple-800 rounded">{tag}</span>
+        <span class="mr-2 text-sm dark:bg-lgt/20 dark:text-lgt/90 px-2 py-1 bg-purple-200 text-purple-800 rounded">{tag}</span>
       ))}
 
-      <footer class="mt-12 border-t pt-6">
-        <h2 class="text-xs mb-4">Comparte este post:</h2>
-        <div class="flex gap-4">
+      <footer class="mt-12 border-t dark:border-lgt/50 pt-6">
+        <h2 class="text-xs dark:text-lgt/90 mb-4">Comparte este post:</h2>
+        <div class="flex dark:invert gap-4">
           <!-- Twitter -->
           <a
             href={`https://twitter.com/intent/tweet?text=${shareText}&url=${currentUrl}`}

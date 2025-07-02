@@ -19,7 +19,7 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
   <main class="flex-1 overflow-x-hidden">
     <section id="landing" class="relative w-full h-screen">
       <div id="p5-container" class="w-full h-full absolute top-0 left-0 z-0 bg-text">
-        <div class="absolute bottom-4 left-4 z-10 text-xs text-white max-w-xs bg-black/40 backdrop-blur-xs p-3">
+        <div class="absolute bottom-4 left-4 z-10 text-xs text-white dark:bg-white/5 max-w-xs bg-black/40 backdrop-blur-xs p-3">
          "Thousands of particles are simulated in real time, following organic patterns. When a word is selected, they align to form it on screen. This sketch was made using p5.js, a creative JavaScript library."
          <a href="https://israpaucar.com/blog/cuando-el-caos-se-organiza-vector-fields-en-p5-js-houdini-y-un-extra/" class="hover:text-brand transition-colors duration-300">see more...</a> 
         </div>
@@ -46,17 +46,17 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
     </section>
     
     <div id="about-me" class=" w-9/10 mx-auto flex justify-center py-20">
-      <div class="about-box w-full max-w-5xl bg-white/10 shadow-lg p-8 flex flex-col md:flex-row items-center gap-10">
+      <div class="about-box w-full max-w-5xl bg-white/8 shadow-lg p-8 flex flex-col md:flex-row items-center gap-10">
         
         <!-- Texto e íconos a la izquierda -->
-        <div class="info w-full md:w-1/2 text-text space-y-4 text-[2rem] font-[200]">
+        <div class="info w-full md:w-1/2 text-text dark:text-lgt space-y-4 text-[2rem] font-[200]">
           <p class="text-xl font-semibold text-[3rem]">Hello! 👋</p>
           <p>
             I'm Isra, a Houdini artist from Ecuador. Passionate about the blend of art, science, and tech.
             VFX work for Disney, HBO, Netflix, Apple TV+, and more.
           </p>
 
-          <div class="social-links flex gap-4 mt-4">
+          <div class="social-links flex gap-4 mt-4 dark:invert">
             <a href="https://github.com/briankill4" target="_blank">
               <img src="assets/icons/github-brands-solid.svg" alt="GitHub" class="w-6 h-6 hover:scale-110 transition" />
             </a>
@@ -85,14 +85,28 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
     </div>
 <div class="px-4 sm:px-8 mx-auto max-w-screen-xl">
   <h2 class="text-3xl font-bold text-center mb-12 text-gray-800 dark:text-white">
-    My Recent Posts
+    My recent posts
+    <span class="cursor">_</span>
   </h2>
-
+  <style>
+    .titulo {
+      font-size: 2.5rem;
+      font-weight: bold;
+      font-family: monospace;
+    }
+    .cursor {
+      animation: blink 1s steps(1) infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
   <div class="w-3/4 mx-auto grid justify-center gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-30">
     {posts.map(post => (
       <a 
         href={`/blog/${post.slug}`} 
-        class="block border border-gray-200 hover:border-gray-800 dark:border-gray-700 rounded-xs px-6 py-5 shadow-sm hover:shadow-md transition group w-[320px] sm:w-[360px]"
+        class="block border border-gray-200 hover:border-gray-800 dark:bg-white/10 dark:border-gray-700 rounded-xs px-6 py-5 shadow-sm hover:shadow-md transition group w-[320px] sm:w-[360px]"
       >
         <p class="text-sm text-gray-500 dark:text-gray-400 mb-2">
           {new Date(post.data.date).toLocaleDateString('en-US', {
@@ -108,7 +122,7 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
           {post.data.tagline}
         </p>
         <p class="text-xs text-gray-400 flex items-center gap-2">
-          <span>by {post.data.author}</span> · <span>{post.data["time-read"]} min read</span>
+          <span>{post.data.author}</span> · <span>{post.data["time-read"]} min read</span>
         </p>
       </a>
     ))}

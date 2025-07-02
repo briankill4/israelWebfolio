@@ -1,6 +1,22 @@
 ---
 ---
-<h1 class="text-4xl py-15 font-bold text-center ">REEL 2024</h1>
+<h1 class="text-4xl py-15 font-bold text-center dark:text-lgt">Reel 2024
+  <span class="cursor">_</span>
+</h1>
+    <style>
+    .titulo {
+      font-size: 2.5rem;
+      font-weight: bold;
+      font-family: monospace;
+    }
+    .cursor {
+      animation: blink 1s steps(1) infinite;
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
+  </style>
       <div style="position:relative;aspect-ratio:16/9;">
         <iframe 
               loading="lazy" title="Gumlet video player"
@@ -9,35 +25,35 @@
             allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
         </iframe>
       </div>
-    <div class="w-3/4 mx-auto bg-white/80 shadow-xl rounded-2xl p-10 grid grid-cols-1 md:grid-cols-2 gap-10 mb-25">
+    <div class="dark:bg-white/10 dark:text-lgt w-3/4 mx-auto bg-white/80  shadow-xl rounded-2xl p-10 grid grid-cols-1 md:grid-cols-2 gap-10 mb-25">
       
       <!-- Video Properties (Izquierda) -->
-      <div class="videoproperties space-y-4 text-left">
+      <div class="videoproperties dark:space-y-4 text-left ">
         <div>
-          <h2 class="font-bold">Featured Studios:</h2>
-          <h3 class="text-xl font-[200]">Netflix, Disney, Prime Video, Star+, AppleTv.</h3>
+          <p class="font-bold">Featured Studios:</p>
+          <p class="text-xl font-[200]">Netflix, Disney, Prime Video, Star+, AppleTv.</p>
         </div>
 
         <div>
-          <h2 class="font-bold">VFX Production by:</h2>
-          <h3 class="text-xl font-[200]">Boat, k&S.</h3>
+          <p class="font-bold">VFX Production by:</p>
+          <p class="text-xl font-[200]">Boat, k&S.</p>
         </div>
 
         <div>
-          <h2 class="font-bold">My role:</h2>
-          <h3 class="text-xl font-[200]">Rigid Body Dynamics, Vellum Simulation, Pyro Simulations, Particle HDA Systems.</h3>
+          <p class="font-bold">My role:</h2>
+          <p class="text-xl font-[200]">Procedural vegetation, pyro simulations, Vellum cloth, RBD destruction, and custom snow and decay systems.</p>
         </div>
 
         <div>
-          <h2 class="font-bold">Music:</h2>
-          <h3 class="text-xl font-[200]">GLORYHAMMER.</h3>
+          <p class="font-bold">Music:</p>
+          <p class="text-xl font-[200]">GLORYHAMMER.</p>
         </div>
       </div>
 
       <!-- Descripción (Derecha) -->
-      <div class="aboutvideo text-left md:text-right flex items-center">
-        <h3 class="text-2xl font-semibold">
-          A selection of some of the most interesting projects of 2024
-        </h3>
+      <div class="aboutvideo text-left md:text-left flex items-center">
+        <p class="text-1rem font-semibold">
+          FX reel showcasing work done in Houdini: Includes production shots and personal explorations.
+        </p>
       </div>
     </div>

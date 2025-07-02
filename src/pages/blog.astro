@@ -16,10 +16,10 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
   
   <header><Header page="BLOG"/></header>
     <main class="flex-1">
-      <section class="w-3/4 mx-auto bg-white dark:bg-gray-900 py-14">
+      <section class="w-3/4 mx-auto py-14">
         <!-- Title Section -->
         <div class="text-left py-10">
-          <h1 class="text-4xl font-extrabold text-black dark:text-white mb-4">Procedural Blog<span class="cursor">_</span></h1>
+          <h1 class="text-4xl font-extrabold text-black dark:text-lgt mb-4">Procedural Blog<span class="cursor">_</span></h1>
           <style>
           .titulo {
             font-size: 2.5rem;
@@ -34,10 +34,10 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
             50% { opacity: 0; }
           }
         </style>
-          <p class="text-[3vh] sm:text-[6vh] text-text font-[300] leading-none">Ideas y experimentos nacidos del cruce entre creatividad y computadoras.</p>
+          <p class="text-[3vh] sm:text-[6vh] text-text font-[300] dark:text-lgt leading-none">Ideas y experimentos nacidos del cruce entre creatividad y computadoras.</p>
         </div>
         
-      <div class="px-8 mx-auto lg:max-w-screen-xl sm:max-w-xl md:max-w-full ">
+      <div class="px-8 mx-auto lg:max-w-screen-xl  sm:max-w-xl md:max-w-full ">
         <div class="grid gap-x-8 gap-y-10 sm:gap-y-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {posts.map(post => (
             <div class="relative">
@@ -50,7 +50,7 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
                 />
               </a>
               <div class="relative mt-5">
-                <p class="uppercase text-xs mb-2.5 text-text">
+                <p class="uppercase text-xs dark:text-lgt mb-2.5 text-text">
                   {new Date(post.data.date).toLocaleDateString('es-ES', {
                     year: 'numeric',
                     month: 'short',
@@ -66,9 +66,9 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
                 <p class="mb-2 text-gray-700 dark:text-gray-300">
                   {post.data.tagline}
                 </p>
-                <p class="flex flex-wrap gap-1 mb-4 text-gray-700 dark:text-gray-300">
+                <p class="flex  flex-wrap gap-1 mb-4 text-gray-700 dark:text-gray-300">
                   {post.data.tags.map(tag => (
-                  <span class="mr-2 text-xs px-2 py-1 bg-gray-300 text-blue-800 rounded">{tag}</span>
+                  <span class="mr-2 text-xs px-2 py-1 dark:bg-lgt/10 dark:text-lgt/90 bg-gray-300 text-blue-800 rounded">{tag}</span>
                   ))}
                 </p>
               </div>
