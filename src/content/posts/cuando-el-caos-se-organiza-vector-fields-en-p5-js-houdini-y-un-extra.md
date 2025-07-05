@@ -2,12 +2,16 @@
 title: " Cuando el caos se organiza: Vector Fields en p5.js, Houdini y un extra."
 tagline: Campos vectoriales, partículas y la magia de Perlin noise.
 promt: Vector field creado en Houidini Fx.
-thumbnail: /uploads/captura-de-pantalla-2025-06-27-205418.png
+thumbnail: /uploads/vectorfields_v03.karmarendersettings.201.jpg
 author: by Israel paucar
 refe:
   - link: https://es.wikipedia.org/wiki/Campo_vectorial
     author: Campo vectorial – Wikipedia
-time-read: 7
+  - link: https://natureofcode.com/random/#a-smoother-approach-with-perlin-noise
+    author: The Nature of code - A Smoother Approach with Perlin Noise
+  - link: https://www.gorillasun.de/blog/perlin-noise-flow-fields-in-processing-part-i/
+    author: Perlin Noise Flow Fields in Processing By Ahmad Moussa
+time-read: 5
 date: 2025-06-27 20:33
 tags:
   - vector
@@ -26,6 +30,8 @@ No soy físico ni matemático, pero al ver este tipo de gráficas, mi instinto c
 
 Buscando un poco en internet, descubrí que es más común de lo que parece. Además de usarse para representar el movimiento de fenómenos científicos, hay artistas que aprovechan este concepto para explorar su lado más artístico e interesante.
 
+![Flow Fields in Processing by Ahmad Moussa](https://www.gorillasun.de/content/images/2023/03/fieldColorDashedShort58.png "Flow Fields in Processing")
+
 No quiero entrar demasiado en profundidad en el tema, porque aún no lo tengo completamente entendido, y quizás nunca lo haga. Pero quiero hacer un repaso rápido por los conceptos básicos que he aprendido.
 
 Antes de entrar en más detalle, vamos a revisar la unidad básica que compone un *vector field*.
@@ -43,8 +49,6 @@ Vamos a analizar las partes que componen un vector:
 * **Magnitud o longitud (magnitude or length):** se puede entender como qué tan grande es el vector. En algunos contextos, también se puede interpretar como velocidad.
 * **Dirección:** indica hacia donde apunta el vector.
 
-No quiero ser demasiado técnico a la hora de analizar estos componentes, porque ya la computadora se encarga de realizar la mayoría de los cálculos. Nos resuelve y nos facilita gran parte de la vida… ¡hasta quitarnos el trabajo y dominarnos para controlarnos! Jajaja.
-
 Bueno, ahora que sabemos qué es un vector, necesitamos “subirlo” a algo que pueda almacenar toda esa información de dirección y magnitud.
 
 Ahí es cuando entran en escena nuestras amigas, las partículas, que siempre son muy convenientes para llevar todo tipo de información.
@@ -59,7 +63,7 @@ Como estamos empezando, siempre vamos a crear un vector 2D que se mueva en un es
 
 **Two-dimensional noise**
 
-Sin entrar demasiado en profundidad, podemos entender Perlin noise como un algoritmo que genera números aleatorios, pero de una forma más suave.
+Podemos entender Perlin noise como un algoritmo que genera números aleatorios, pero de una forma más suave.
 
 ¿Qué quiero decir con esto? A diferencia de una función *random*, donde todos los valores generados no tienen relación entre sí y suelen ser más ruidosos, Perlin noise tiene una apariencia mucho más orgánica, porque genera números naturalmente ordenados: una secuencia de valores en la que cada número guarda cierta coherencia con sus vecinos.
 
@@ -67,8 +71,10 @@ Una vez entendido qué es Perlin noise, vamos a usar sus valores para definir or
 
 ## Let’s do it
 
-Ya entendimos los conceptos que vamos a usar de manera global, así que ahora vamos a ponerlos en práctica en varios softwares al mismo tiempo.
+Hemos entendido de manera global los conceptos que vamos a usar, y ahora llegó el momento de ponerlos en práctica en distintos softwares.
 
-Voy a generar líneas de código en **p5.js**, que es una librería de JavaScript creada para escribir y visualizar *creative coding*.
+Voy a escribir algunas líneas de código en **p5.js**, una librería de JavaScript pensada para crear y visualizar *creative coding*.
 
-Después, también usaremos **Houdini**, para entender cómo estos conceptos se pueden extrapolar de manera interesante.
+Después, exploraremos **Houdini**, para demostrar cómo estos conceptos se pueden extrapolar de forma interesante y creativa.
+
+¡Vamos a ver cómo se convierten en imágenes todas estas ideas!
