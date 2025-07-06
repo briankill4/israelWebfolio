@@ -2,7 +2,7 @@
 title: "Cuando el caos se organiza: P5js particulas con rumbo "
 tagline: Perlin noise, código y un toque de curiosidad.
 promt: Vector fields generados con codigo en p5js
-thumbnail: ""
+thumbnail: /uploads/flow_fields.jpg
 author: by Israel paucar
 refe:
   - link: https://editor.p5js.org/israelprb/sketches/-goaT-EC6
@@ -23,6 +23,11 @@ tags:
   - arte
   - digital
 ---
+Resultó ser más largo de lo que creía, así que he decidido darle el protagonismo que corresponde a cada ejemplo, separándolos en distintas entradas.
+
+Justo aquí arriba tenemos un ejemplo basado en **Perlin noise**, que genera esas líneas tan interesantes que dibujan el flujo o movimiento de un ruido orgánico.
+
+Acá dejo el código completo por si quieren revisarlo.
 <div class="w-full aspect-video">
   <iframe 
     src="https://editor.p5js.org/israelprb/full/-goaT-EC6" 
@@ -31,11 +36,6 @@ tags:
   ></iframe>
 </div>
 
-Resultó ser más largo de lo que creía, así que he decidido darle el protagonismo que corresponde a cada ejemplo, separándolos en distintas entradas.
-
-Justo aquí arriba tenemos un ejemplo basado en **Perlin noise**, que genera esas líneas tan interesantes que dibujan el flujo o movimiento de un ruido orgánico.
-
-Acá dejo el código completo por si quieren revisarlo.
 
 ```javascript
 let noiseScale = 1500;
