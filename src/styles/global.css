@@ -6,8 +6,7 @@
     --color-bblue: #244CE4;
     --color-byellow: #FAC748;
     --color-text: #040F16;
-    --color-lgt: #FFFCFF;
-    
+    --color-lgt: #FFFCFF;  
 }
 @layer base {
   h2 {
@@ -16,14 +15,12 @@
     text-align: center;
     margin-top: 30px;
     margin-bottom: 30px;
-
   }
 }
 
-
 pre {
-  font-family: 'JetBrains Mono Variable', monospace;
-  @apply rounded-md pl-8;
+  @apply rounded-md pl-8 font-mono;
+  font-family: 'JetBrains Mono', monospace;
   margin:auto;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -50,6 +47,8 @@ pre code .line::before {
 	counter-increment: step;
 	color: rgba(115, 138, 148, 0.4);
 }
+
+
 
 *{
     font-family: "inter";

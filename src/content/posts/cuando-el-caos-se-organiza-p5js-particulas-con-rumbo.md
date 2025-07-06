@@ -12,23 +12,20 @@ date: 2025-07-05 21:15
 tags:
   - javaScript
   - p5.js
-  - vector
-  - flow
+  - vector Flow
   - for
   - creative
   - coding
-  - perlin
-  - noise
-  - partículasa
-  - arte
-  - digital
+  - Perlin Noise
+  - partículas
+  - Arte Dgital
 ---
 Resultó ser más largo de lo que creía, así que he decidido darle el protagonismo que corresponde a cada ejemplo, separándolos en distintas entradas.
 
 Justo aquí arriba tenemos un ejemplo basado en **Perlin noise**, que genera esas líneas tan interesantes que dibujan el flujo o movimiento de un ruido orgánico.
 
 Acá dejo el código completo por si quieren revisarlo.
-<div class="w-full">
+<div class="w-full m-auto mt-4">
   <iframe 
     src="https://editor.p5js.org/israelprb/full/-goaT-EC6" 
     class="w-full h-125 border-0"
