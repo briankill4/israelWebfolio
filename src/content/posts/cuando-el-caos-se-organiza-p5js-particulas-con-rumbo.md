@@ -28,7 +28,7 @@ Resultó ser más largo de lo que creía, así que he decidido darle el protagon
 Justo aquí arriba tenemos un ejemplo basado en **Perlin noise**, que genera esas líneas tan interesantes que dibujan el flujo o movimiento de un ruido orgánico.
 
 Acá dejo el código completo por si quieren revisarlo.
-<div class="w-full aspect-video">
+<div class="w-full">
   <iframe 
     src="https://editor.p5js.org/israelprb/full/-goaT-EC6" 
     class="w-full h-125 border-0"
@@ -100,7 +100,7 @@ class Particle{
 }
 ```
 
-## Entrando en Tema
+**Entrando en Tema**
 
 Interesante acercamiento. Si no entendiste nada de código y estás acá solo para curiosear, voy a hacer una explicación lo menos técnica posible. Aunque, realmente, te recomiendo que, si querés sacarle el jugo a toda esta info, te animes a investigar cómo funciona el *creative coding*, sobre todo en **Processing** y **p5.js**, que serían prácticamente lo mismo.
 
@@ -147,7 +147,7 @@ class Particle{
 
 Para entenderlo un poco mejor, definimos una clase llamada **Particle**, donde vamos a guardar nuestros vectores y su información de posición, orientación y magnitud. Dentro de la clase, le asignamos distintos pasos:
 
-## Move ()
+**Move ()**
 
 ```javascript
 move() {
@@ -174,7 +174,7 @@ De esta forma, cada partícula obtiene una dirección diferente, basada en el ca
 
 *Nota: Multiplicar por **TWO_PI** convierte el valor del noise (entre 0 y 1) en un ángulo que va de 0 a 360 grados, y **noiseStrength** controla cuánta variación queremos en las direcciones.*
 
-## Update ()
+**Update ()**
 
 En resumidas cuentas, acá definimos el tipo de **stroke** que queremos para nuestras líneas y dibujamos cada segmento formado por dos vectores:
 
@@ -192,7 +192,7 @@ beginShape();
 endShape();
 ```
 
-## Dibujar en el Canvas
+**Dibujar en el Canvas**
 
 ¡Buena! Ahora que tenemos nuestra clase creada, tenemos que llamarla en nuestro canvas con valores aleatorios. Para eso usamos un for, que procesa el código varias veces hasta que se cumple la condición, que en este caso es el número de partículas que queremos.
 
@@ -245,7 +245,5 @@ for(let j=0; j<tail;j++){
 ¿Por qué hay un for dentro de otro for? Bueno, pensémoslo así: vamos a crear una línea por cada partícula. Entonces, añadiendo un for por encima de nuestro primer for, creamos una línea nueva donde terminó la anterior, haciendo más largo el “trail” de nuestro vector flow.
 
 ¡Y pum! El resultado es más que interesante: se forman patrones muy orgánicos y atractivos. Esto sucede porque, al usar este método, los valores tienen coherencia con sus vecinos, por lo que obtenemos resultados con apariencia natural y fluida.
-
-## ¡Buen trabajo!
 
 Creo que es tiempo de subirle el nivel a esto e ir por una versión en Houdini. Sé que es mucha información hasta ahora, pero si vamos poco a poco, vamos a ver lo poderosos que pueden llegar a ser estos conceptos y cómo podemos crear efectos increíbles.
