@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Header from '../../components/HeaderPages.astro';
 import Footer from '../../components/footer.astro';
 
-
 import { CollectionEntry, getCollection } from "astro:content";
 
 export async function getStaticPaths() {
@@ -24,6 +23,7 @@ const { Content } = await post.render();
 
 const currentUrl = `https://www.israpaucar.com/blog/${post.slug}`;
 const shareText = encodeURIComponent(`Mirá este post: ${post.data.title}`);
+
 ---
 ---
 

@@ -31,7 +31,7 @@ Acá dejo el código completo por si quieren revisarlo.
 <div class="w-full aspect-video">
   <iframe 
     src="https://editor.p5js.org/israelprb/full/-goaT-EC6" 
-    class="w-full h-full border-0"
+    class="w-full h-125 border-0"
     allowfullscreen
   ></iframe>
 </div>

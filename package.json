@@ -11,8 +11,10 @@
   "dependencies": {
     "@astrojs/markdown-remark": "^6.3.2",
     "@astrojs/rss": "^4.0.12",
+    "@fontsource-variable/jetbrains-mono": "^5.2.6",
     "@fontsource/inter": "^5.2.6",
     "@fontsource/twinkle-star": "^5.2.6",
+    "@shikijs/transformers": "^3.7.0",
     "@tailwindcss/vite": "^4.1.8",
     "astro": "^5.9.1",
     "decap-cms-app": "^3.6.4",

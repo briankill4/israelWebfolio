@@ -102,7 +102,7 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
       50% { opacity: 0; }
     }
   </style>
-  <div class="w-3/4 mx-auto grid justify-center gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-30">
+  <div class=" grid justify-center gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-30">
     {posts.map(post => (
       <a 
         href={`/blog/${post.slug}`} 
