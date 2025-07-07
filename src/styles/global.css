@@ -1,5 +1,5 @@
 @import "tailwindcss";
-@import "@fontsource-variable/jetbrains-mono/index.css";
+@import "@fontsource-variable/jetbrains-mono";
 
 @theme {
     --color-brand: #007FFF;
@@ -17,10 +17,11 @@
     margin-bottom: 30px;
   }
 }
-
+html code {
+  font-family: 'JetBrains Mono', monospace !important;
+}
 pre {
-  @apply rounded-md pl-8 font-mono;
-  font-family: 'JetBrains Mono', monospace;
+  @apply rounded-md pl-8;
   margin:auto;
   margin-top: 2rem;
   margin-bottom: 2rem;

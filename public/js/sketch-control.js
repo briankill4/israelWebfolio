@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (currentScroll > lastScrollY + 10) {
           sketchControl.classList.add("hide");
-        } else if (currentScroll < lastScrollY - 10) {
+        } else if (currentScroll < lastScrollY - 10 && currentScroll < 560) {
           sketchControl.classList.remove("hide");
         }
 

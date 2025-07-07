@@ -24,7 +24,16 @@ const { Content } = await post.render();
 const currentUrl = `https://www.israpaucar.com/blog/${post.slug}`;
 const shareText = encodeURIComponent(`Mirá este post: ${post.data.title}`);
 
----
+const posts = await getCollection("posts");
+
+posts.sort(
+  (a, b) => new Date(a.data.date).getTime() - new Date(b.data.date).getTime()
+);
+
+const index = posts.findIndex((p) => p.slug === post.slug);
+
+const prevPost = posts[index - 1] || null;
+const nextPost = posts[index + 1] || null;
 ---
 
 <BaseLayout title="Israel Paucar | BLOG" description="Portfolio interactivo de Israel Paucar, artista VFX. Houdini artist, creative coding">
@@ -80,6 +89,19 @@ const shareText = encodeURIComponent(`Mirá este post: ${post.data.title}`);
 
       <div class="w-9/10 mx-auto grid dark:text-lgt/90 justify-center sm:text-lg text-xl markdown prose dark:prose-invert max-w-none mt-6 mb-6">
         <Content />
+      </div>
+      <div class="flex justify-between mt-8">
+        {prevPost ? (
+          <a href={`/blog/${prevPost.slug}`} class="text-blue-600 hover:text-brand  hover:underline">
+            ← {prevPost.data.title}
+          </a>
+        ) : <span></span>}
+
+        {nextPost ? (
+          <a href={`/blog/${nextPost.slug}`} class="text-blue-600  hover:text-brand  hover:underline">
+            {nextPost.data.title} →
+          </a>
+        ) : <span></span>}
       </div>
       {post.data.refe && (
         <section class="font-[400] text-sm text-gray-500 mt-10 prose dark:prose-invert mb-6">
