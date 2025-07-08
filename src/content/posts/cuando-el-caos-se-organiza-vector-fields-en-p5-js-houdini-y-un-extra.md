@@ -2,7 +2,7 @@
 title: " Cuando el caos se organiza: Vector Fields en p5.js, Houdini y un extra."
 tagline: Campos vectoriales, partículas y la magia de Perlin noise.
 promt: Vector field creado en Houidini Fx.
-thumbnail: /uploads/vector_fields_close_v05.jpg
+thumbnail: /uploads/vector_fields_close_v05_-120-265-_1.gif
 author: by Israel paucar
 refe:
   - link: https://es.wikipedia.org/wiki/Campo_vectorial
