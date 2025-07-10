@@ -6,6 +6,13 @@ thumbnail: /uploads/vector_fields_close_v07.gif
 author: by Israel paucar
 time-read: 2
 date: 2025-07-10 16:35
+tags:
+  - houdini
+  - Vex
+  - DOPs
+  - vector
+  - trails
+  - ""
 ---
 Como sabemos, en Houdini podemos realizar una misma tarea de muchas formas: algunas óptimas y otras no tan eficientes. Por lo tanto, siempre, como **rule of thumb**, lo que nos indicará el camino es tratar de optimizar el procesamiento y mantenerlo eficiente.
 
