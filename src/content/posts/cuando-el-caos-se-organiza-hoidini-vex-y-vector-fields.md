@@ -4,7 +4,12 @@ tagline: Explorando Vector Fields en Houdini
 promt: Simulacion de particulas en Houdini usando vector fields concept.
 thumbnail: /uploads/vector_fields_close_v07.gif
 author: by Israel paucar
-time-read: 2
+refe:
+  - author: Houdini Reference - Volume Trail geometry node
+    link: https://www.sidefx.com/docs/houdini/nodes/sop/volumetrail.html
+  - author: Houdini Reference - noise VEX function
+    link: https://www.sidefx.com/docs/houdini/vex/functions/noise.html
+time-read: 6
 date: 2025-07-10 16:35
 tags:
   - houdini
