@@ -1,5 +1,5 @@
 ---
-title: Cuando el caos se organiza:Hoidini, Vex y Vector Fields
+title: Cuando el caos se organiza:Houdini, Vex y Vector Fields
 tagline: Explorando Vector Fields en Houdini
 promt: Simulacion de particulas en Houdini usando vector fields concept.
 thumbnail: /uploads/vector_fields_close_v07.gif
@@ -154,16 +154,13 @@ Usualmente, esto se hace para mantener el código más limpio y explícito, a me
 
 **Vector angle**
 
-
 Este pedazo de código es exactamente igual a lo que haríamos en **p5.js** y, en realidad, está haciendo lo mismo. La función **noise** nos devuelve valores entre 0 y 1, y los multiplicamos por **TWO_PI** para convertirlos a 360 grados, junto con un modificador (**noiseStrength**) para ampliar o escalar esos valores.
 
 **Vector dir**
 
-
 De cada valor obtenido, sampleamos las funciones **cos** y **sin** para obtener un ángulo según el valor muestreado, más su modificación (noiseStrength).
 
 **Vector vel**
-
 
 Bien, acá vamos a mover la partícula en la orientación que obtuvimos en **dir**. Mientras más alto sea el valor de **speed**, más se va a desplazar. Como extra, agregamos un multiplicador (en este caso, **mult_vel**) que nos va a ayudar a controlar la magnitud, para decidir si el movimiento es más intenso o más suave.
 
@@ -179,18 +176,15 @@ for (int i = 0; i < trail; i++) {
 
 **int pt**
 
-
 En cada iteración, creamos un punto en la posición original o en la posición anterior.
 
 **@P += vel;**
-
 
 A esa posición le sumamos el desplazamiento en la dirección que definimos, multiplicado por **speed**, que determina cuánto se va a mover desde su punto de inicio.
 
 La siguiente línea es utilitaria y no necesariamente obligatoria:
 
 **set id**
-
 
 Copiamos el **id** del punto de partida a lo largo de toda la cadena, para después poder conectarlos mediante un nodo **Add**.
 
