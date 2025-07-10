@@ -44,6 +44,8 @@ En este caso, será un volumen vectorial, porque nuestra velocidad es un vector 
 
 Conectamos nuestros *inputs* y ¡pum! Nuestros **trails** son desplazados por la velocidad de nuestros volúmenes.
 
+![](/uploads/captura-de-pantalla-2025-07-10-155328.png)
+
 Posteriormente, podemos renderizarlos como **strands** y obtener hermosos resultados.
 
 ![Vector Trails in the space renders as strands](/uploads/captura-de-pantalla-2025-06-27-205418.png "Vector Trails strands")
@@ -64,7 +66,7 @@ Así que estuve probando toda esta semana algunos caminos posibles y me topé co
 
 ```javascript
 // create particles
-int num = chi("num"); // number of particles
+int num = chi("num"); // number of particles, set to 1500
 float speed;
 
 for (int i = 0; i < num; i++) {
@@ -151,12 +153,18 @@ En la variable **pos**, que es un vector, vamos a guardar la posición actual de
 Usualmente, esto se hace para mantener el código más limpio y explícito, a menos que queramos usar esa versión anterior de la posición con algún otro fin.
 
 **Vector angle**
+
+
 Este pedazo de código es exactamente igual a lo que haríamos en **p5.js** y, en realidad, está haciendo lo mismo. La función **noise** nos devuelve valores entre 0 y 1, y los multiplicamos por **TWO_PI** para convertirlos a 360 grados, junto con un modificador (**noiseStrength**) para ampliar o escalar esos valores.
 
 **Vector dir**
+
+
 De cada valor obtenido, sampleamos las funciones **cos** y **sin** para obtener un ángulo según el valor muestreado, más su modificación (noiseStrength).
 
 **Vector vel**
+
+
 Bien, acá vamos a mover la partícula en la orientación que obtuvimos en **dir**. Mientras más alto sea el valor de **speed**, más se va a desplazar. Como extra, agregamos un multiplicador (en este caso, **mult_vel**) que nos va a ayudar a controlar la magnitud, para decidir si el movimiento es más intenso o más suave.
 
 ```java
@@ -170,14 +178,20 @@ for (int i = 0; i < trail; i++) {
 ```
 
 **int pt**
+
+
 En cada iteración, creamos un punto en la posición original o en la posición anterior.
 
 **@P += vel;**
+
+
 A esa posición le sumamos el desplazamiento en la dirección que definimos, multiplicado por **speed**, que determina cuánto se va a mover desde su punto de inicio.
 
 La siguiente línea es utilitaria y no necesariamente obligatoria:
 
 **set id**
+
+
 Copiamos el **id** del punto de partida a lo largo de toda la cadena, para después poder conectarlos mediante un nodo **Add**.
 
 Y así obtenemos un resultado muy, muy parecido a lo que logramos en **Processing** o en la versión más corta.
