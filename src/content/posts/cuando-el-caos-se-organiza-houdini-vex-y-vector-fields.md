@@ -15,12 +15,13 @@ tags:
   - houdini
   - Vex
   - DOPs
-  - vector
-  - trails
+  - Vector Trails
   - wrangle
   - point
-  - particles
+  - particle simulation
   - render
+  - creative Coding
+  - art
 ---
 Como sabemos, en Houdini podemos realizar una misma tarea de muchas formas: algunas óptimas y otras no tan eficientes. Por lo tanto, siempre, como **rule of thumb**, lo que nos indicará el camino es tratar de optimizar el procesamiento y mantenerlo eficiente.
 
@@ -154,13 +155,16 @@ Usualmente, esto se hace para mantener el código más limpio y explícito, a me
 
 **Vector angle**
 
+
 Este pedazo de código es exactamente igual a lo que haríamos en **p5.js** y, en realidad, está haciendo lo mismo. La función **noise** nos devuelve valores entre 0 y 1, y los multiplicamos por **TWO_PI** para convertirlos a 360 grados, junto con un modificador (**noiseStrength**) para ampliar o escalar esos valores.
 
 **Vector dir**
 
+
 De cada valor obtenido, sampleamos las funciones **cos** y **sin** para obtener un ángulo según el valor muestreado, más su modificación (noiseStrength).
 
 **Vector vel**
+
 
 Bien, acá vamos a mover la partícula en la orientación que obtuvimos en **dir**. Mientras más alto sea el valor de **speed**, más se va a desplazar. Como extra, agregamos un multiplicador (en este caso, **mult_vel**) que nos va a ayudar a controlar la magnitud, para decidir si el movimiento es más intenso o más suave.
 
@@ -176,15 +180,18 @@ for (int i = 0; i < trail; i++) {
 
 **int pt**
 
+
 En cada iteración, creamos un punto en la posición original o en la posición anterior.
 
 **@P += vel;**
+
 
 A esa posición le sumamos el desplazamiento en la dirección que definimos, multiplicado por **speed**, que determina cuánto se va a mover desde su punto de inicio.
 
 La siguiente línea es utilitaria y no necesariamente obligatoria:
 
 **set id**
+
 
 Copiamos el **id** del punto de partida a lo largo de toda la cadena, para después poder conectarlos mediante un nodo **Add**.
 
@@ -208,12 +215,19 @@ Así mantengo su velocidad actual, pero cambio solo la orientación. Eso sí, ha
 
 El resultado es más que interesante.
 
-video goes here
+<div class="w-full m-auto">
+  <iframe  
+    title="vimeo-player" 
+    src="https://player.vimeo.com/video/1100621155?h=db46815734" 
+    class="w-full h-[500px] border-0"   
+    allowfullscreen>
+  </iframe>
+</div>
 
 Bien, hemos llegado lejos, y sé que puede ser difícil entender todo esto de una sola vez, pero creo que son técnicas muy valiosas para darle un valor agregado a nuestras creaciones, ya sea en **Houdini** o en cualquier otro programa que nos permita aplicar una lógica similar.
 
 Con esto concluimos la **Parte 2** de nuestra serie, y es momento de hacer algo más tangible.
 
-En el siguiente post, vamos a recrear exactamente lo mismo usando un **Arduino** y **MicroPython**.
+En el siguiente post, vamos a recrear exactamente lo mismo usando un **Raspberry Pi** y **MicroPython**.
 
-Si llegaron hasta acá, ¡abrazis! Y nos vemos en el próximo post.
+Si llegaron hasta acá, ¡abrazos! Y nos vemos en el próximo post.
