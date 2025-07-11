@@ -25,45 +25,38 @@ tags:
 ---
 Como sabemos, en Houdini podemos realizar una misma tarea de muchas formas: algunas óptimas y otras no tan eficientes. Por lo tanto, siempre, como **rule of thumb**, lo que nos indicará el camino es tratar de optimizar el procesamiento y mantenerlo eficiente.
 
-Quiero plantear dos formas de hacer esto: una rápida, para quienes no quieran adentrarse tanto en el tema, y otra versión más profunda, donde exploraremos las similitudes con otros procesos.
+Quiero plantear dos formas de hacer esto: una [versión rápida](#usando-volume-trail), para quienes no quieran adentrarse tanto en el tema, y otra [versión más profunda](#usando-vex-y-wrangles), donde exploraremos las similitudes con otros procesos.
 
-![vector field system with nodes in houdini](/uploads/captura-de-pantalla-2025-07-10-142728.png "Vector field system")
+# video
 
-Primero, vamos a crear nuestras partículas dispersas dentro de un contenedor, que en este caso es un plano.
+<div class="w-full m-auto mt-6">
+  <iframe  
+    title="vimeo-player" 
+    src="https://player.vimeo.com/video/1100621155?h=db46815734" 
+    class="w-full sm:h-[400px] h-[250px] border-0"   
+    allowfullscreen>
+  </iframe>
+</div>
 
-![Points scattered all inside a grid](/uploads/captura-de-pantalla-2025-07-10-172549.png "Scattered Points")
+## Usando VEX y Wrangles
 
-Como mencionamos, nuestro nodo **Volume Trail** exige dos *inputs*: **Points to Trail** y **Velocity Volumes**.
+Bien, arrancamos por la **versión extendida**.
 
-![Volume trail inputs detail, points and vel volumes](/uploads/captura-de-pantalla-2025-07-10-154059.png "Volume trail node")
+Pero… ¿por qué extendida? Seguro estás pensando: ¿Es más compleja, con código y todo eso?
 
-Ya tenemos nuestros puntos, así que ahora necesitamos un volumen que dibuje nuestros trails. Aquí podemos generarlos como queramos, pero lo que voy a hacer es crear un **Perlin Noise** y agregarlo como velocidad a cada punto. Después, voy a rasterizar esta información en un **Velocity Volume** usando un nodo de rasterización de partículas llamado **Volume Rasterize Attributes**, que toma cada una de nuestras partículas y las convierte en el volumen que necesitamos.
-
-En este caso, será un volumen vectorial, porque nuestra velocidad es un vector que tiene magnitud y dirección, perfecto para desplazar y dibujar nuestros trails.
-
-![Rasterize particles to generate velocity volumes](/uploads/captura-de-pantalla-2025-07-10-154830.png "Rasterize Particles")
-
-Conectamos nuestros *inputs* y ¡pum! Nuestros **trails** son desplazados por la velocidad de nuestros volúmenes.
-
-![](/uploads/captura-de-pantalla-2025-07-10-155328.png)
-
-Posteriormente, podemos renderizarlos como **strands** y obtener hermosos resultados.
-
-![Vector Trails in the space renders as strands](/uploads/captura-de-pantalla-2025-06-27-205418.png "Vector Trails strands")
-
-**Código usando VEX y Wrangles**
-
-Bien, esa es una forma de hacerlo, pero ¿qué hay de la forma más larga y compleja, con código y todo eso? ¿Cuál sería el objetivo? Bueno, lo primero sería entender cómo este principio puede representarse en distintas plataformas. Lo que queremos es tratar de recrear lo que hemos aprendido, y esto nos da una gran ventaja: en cualquier momento de la construcción de nuestro sistema podemos modificarlo y personalizarlo para crear efectos derivados.
+¿Cuál sería el objetivo? Bueno, lo complicamos con un solo propósito: **tratar de mantener el control total sobre lo que sucede a lo largo de toda la cadena**. Y esto nos da una gran ventaja: en cualquier momento, durante la construcción de nuestro sistema, podemos modificarlo y personalizarlo para crear efectos derivados.
 
 O sea, en síntesis, tenemos mayor control sobre el resultado final, aunque la complejidad es más alta, lo cual mueve la aguja de equilibrio que nos marca nuestra máxima de óptimo y simple. Quizás para algún efecto que no sea principal esto resulte demasiado, pero para comportamientos más complejos y personalizados necesitamos tener este nivel de control.
 
 Sin embargo, podemos encontrar niveles intermedios gracias a la gran cualidad modular o nodal de Houdini.
 
-Así que estuve probando toda esta semana algunos caminos posibles y me topé con dos alternativas que están muy interesantes. Siempre quiero recalcar que toda la información provista en este blog debe ser puesta en duda y llevada a la práctica: así aprenderemos todos.
+Estuve probando toda esta semana algunos caminos posibles y me topé con varias alternativas que están muy interesantes. *Siempre quiero recalcar que toda la información provista en este blog debe ser puesta en duda y llevada a la práctica: así aprenderemos todos.*
+
+**Create particles**
 
 ![Create vector fields with Vex and wrangles](/uploads/captura-de-pantalla-2025-07-10-142649.png "Vector fields, vex system")
 
-**Create particles**
+
 
 ```javascript
 // create particles
@@ -213,16 +206,34 @@ O sea, si mi partícula tiene una magnitud de 3 y una dirección de (0, 1, 0.5),
 
 Así mantengo su velocidad actual, pero cambio solo la orientación. Eso sí, hay que aclarar que debemos **normalizar** el ángulo (vector) que sampleamos del **vector trail** original para asegurarnos de que esté correcto.
 
-El resultado es más que interesante.
+[El resultado es más que interesante](#video).
 
-<div class="w-full m-auto">
-  <iframe  
-    title="vimeo-player" 
-    src="https://player.vimeo.com/video/1100621155?h=db46815734" 
-    class="w-full h-[500px] border-0"   
-    allowfullscreen>
-  </iframe>
-</div>
+
+## Usando Volume Trail
+
+![vector field system with nodes in houdini](/uploads/captura-de-pantalla-2025-07-10-142728.png "Vector field system")
+
+Primero, vamos a crear nuestras partículas dispersas dentro de un contenedor, que en este caso es un plano.
+
+![Points scattered all inside a grid](/uploads/captura-de-pantalla-2025-07-10-172549.png "Scattered Points")
+
+Ahora necesitamos un volumen que dibuje nuestros trails. Aquí podemos generarlos como queramos, pero lo que voy a hacer es crear un **Perlin Noise** y agregarlo como velocidad a cada punto. Después, voy a rasterizar esta información en un **Velocity Volume** usando un nodo de rasterización de partículas llamado **Volume Rasterize Attributes**, que toma cada una de nuestras partículas y las convierte en el volumen que necesitamos.
+
+En este caso, será un volumen vectorial, porque nuestra velocidad es un vector que tiene magnitud y dirección, perfecto para desplazar y dibujar nuestros trails.
+
+![Rasterize particles to generate velocity volumes](/uploads/captura-de-pantalla-2025-07-10-154830.png "Rasterize Particles")
+
+Como mencionamos, nuestro nodo **Volume Trail** exige dos *inputs*: **Points to Trail** y **Velocity Volumes**.
+
+![Volume trail inputs detail, points and vel volumes](/uploads/captura-de-pantalla-2025-07-10-154059.png "Volume trail node")
+
+Conectamos nuestros *inputs* y ¡pum! Nuestros **trails** son desplazados por la velocidad de nuestros volúmenes.
+
+![](/uploads/captura-de-pantalla-2025-07-10-155328.png)
+
+Posteriormente, podemos renderizarlos como **strands** y obtener hermosos resultados.
+
+![Vector Trails in the space renders as strands](/uploads/captura-de-pantalla-2025-06-27-205418.png "Vector Trails strands")
 
 Bien, hemos llegado lejos, y sé que puede ser difícil entender todo esto de una sola vez, pero creo que son técnicas muy valiosas para darle un valor agregado a nuestras creaciones, ya sea en **Houdini** o en cualquier otro programa que nos permita aplicar una lógica similar.
 
