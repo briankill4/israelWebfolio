@@ -1,7 +1,7 @@
 ---
-title: Cuando el caos se organiza
-tagline: Simulando particulas en un microcontrolador
-promt: Construyendo Flow Fields en una Raspberry Pi
+title: Cuando el caos se organiza:Simulando particulas en un microcontrolador
+tagline: Construyendo Flow Fields en una Raspberry Pi
+promt: Imagen de una pantalla oled usada para el proyecto dibujando Vector Trails
 author: Israel paucar
 refe:
   - link: https://en.wikipedia.org/wiki/Raspberry_Pi
