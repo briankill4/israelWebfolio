@@ -2,6 +2,7 @@
 title: Cuando el caos se organiza:Simulando particulas en un microcontrolador
 tagline: Construyendo Flow Fields en una Raspberry Pi
 promt: Imagen de una pantalla oled usada para el proyecto dibujando Vector Trails
+thumbnail: /uploads/img_9491.gif
 author: Israel paucar
 refe:
   - link: https://en.wikipedia.org/wiki/Raspberry_Pi
