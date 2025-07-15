@@ -128,30 +128,39 @@ Sacrificando un poco de poder de procesamiento, creo que la mejor opción es **g
 
 Sin embargo, esto nos deja con **recursos limitados para dibujar nuestras partículas**.
 
-Dejo que chat gpt explique su deduccion casi acertada. 
+<!-- Dejo que chat gpt explique su deduccion casi acertada. 
 
 Para escribirte el código que me pediste (adaptado a **MicroPython** para correrlo en Raspberry Pi Pico u otras placas), me basé en:
 
 * Mi conocimiento de la estructura estándar de Perlin noise
+
 * Wikipedia (explicación de Perlin noise)
+
 * Código de referencia de:
 
   * Ken Perlin (original)
+
   * Implementaciones en Processing, p5.js, Three.js
+
   * Varios tutoriales (e.g. Stefan Gustavson’s Simplex Noise code, aunque tu código es Perlin, no Simplex)
+
 * Simplicidad para MicroPython → evité NumPy u operaciones complejas, solo usé floats y listas
+
 
 El código es **escrito desde cero**, pero es casi idéntico en lógica a implementaciones públicas como:
 
 * <https://gist.github.com/nowl/828013> (2D Perlin in Python)
+
 * <https://github.com/pvigier/perlin-numpy> (Numpy version)
+
 * p5.js Perlin noise implementation
+
 
 **Hay que mencionar que ChatGPT puede ser una gran herramienta que nos da una patadita inicial muy potente**, pero si no tenemos una noción clara de a dónde queremos llegar, los últimos metros de nuestra carrera pueden volverse muy complejos.
 
 # ¡Vamos a cocinar Vector Fields en la Raspberry Pi Pico!
 
-Hay que mencionar que ChatGPT puede ser una gran herramienta que nos da una patadita inicial muy potente, pero si no tenemos una noción clara de a dónde queremos llegar, los últimos metros de nuestra carrera pueden volverse muy complejos.
+Hay que mencionar que ChatGPT puede ser una gran herramienta que nos da una patadita inicial muy potente, pero si no tenemos una noción clara de a dónde queremos llegar, los últimos metros de nuestra carrera pueden volverse muy complejos.-->
 
 - - -
 

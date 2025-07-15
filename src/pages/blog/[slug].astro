@@ -32,8 +32,8 @@ posts.sort(
 
 const index = posts.findIndex((p) => p.slug === post.slug);
 
-const prevPost = posts[index - 1] || null;
-const nextPost = posts[index + 1] || null;
+const prevPost = posts[index + 1] || null;
+const nextPost = posts[index - 1] || null;
 ---
 
 <BaseLayout title="Israel Paucar | BLOG" description="Portfolio interactivo de Israel Paucar, artista VFX. Houdini artist, creative coding">

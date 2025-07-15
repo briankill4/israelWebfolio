@@ -30,6 +30,7 @@
 
 pre {
   @apply rounded-md pl-8;
+  font-family: "JetBrains Mono", monospace;
   margin:auto;
   margin-top: 2rem;
   margin-bottom: 2rem;
@@ -38,6 +39,7 @@ pre {
   padding-top: 2ch;
   padding-bottom: 2ch;
 }
+
 pre code {
 	@apply block leading-[1.4] p-2 pl-1;
 	font-size: .9rem;
@@ -58,18 +60,16 @@ pre code .line::before {
 }
 
 
-
-*{
+body{
     font-family: "inter";
-
 }
 
 .prose p + p {
-  margin-top: 2em; 
+  margin-top: 2em;
+  font-weight: 300;
 }
 
 .markdown img {
-  
   margin: 1.5rem 0;
   max-width: 60%;
   justify-content: center;

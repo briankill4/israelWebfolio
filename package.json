@@ -18,7 +18,13 @@
     "@tailwindcss/vite": "^4.1.8",
     "astro": "^5.9.1",
     "decap-cms-app": "^3.6.4",
+    "rehype-stringify": "^10.0.1",
+    "remark-breaks": "^4.0.0",
+    "remark-gfm": "^4.0.1",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.1.2",
     "tailwindcss": "^4.1.8",
+    "unified": "^11.0.5",
     "xml2js": "^0.6.2"
   }
 }
