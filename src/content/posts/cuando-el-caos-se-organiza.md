@@ -27,7 +27,14 @@ tags:
   - coding
   - art
 ---
-<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1101629300?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Vector trails - raspberry pi pico"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+<div style="padding:56.25% 0 0 0;position:relative;" class="mt-4 mb-4">
+  <iframe src="https://player.vimeo.com/video/1101629300?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" 
+    frameborder="0" 
+    allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+    title="Vector trails - raspberry pi pico">
+  </iframe>
+</div>
+<script src="https://player.vimeo.com/api/player.js"></script>
 
 Ahora el reto es más grande porque no tengo mucho conocimiento de cómo llevarlo a cabo. 
 
@@ -47,7 +54,7 @@ Hice algunas pruebas y logré desplazar un conjunto de líneas de forma sinusoid
 
 ![Arduino Uno Sin offset animation](/uploads/arduino-anim-sin.jpg "Arduino Uno ")
 
-<div class="w-full aspect-video mt-2 mb-2">
+<div class="w-full aspect-video mt-4 mb-4">
   <iframe
     class="w-full h-full"
     src="https://www.youtube.com/embed/IAzw2O1Z1yQ"
@@ -149,17 +156,6 @@ Hay que mencionar que ChatGPT puede ser una gran herramienta que nos da una pata
 - - -
 
 ## ¡Vamos a cocinar!
-
-<div class="w-full aspect-video">
-  <iframe
-    class="w-full h-full"
-    src="https://www.youtube.com/embed/nER9SJAv__Y"
-    title="YouTube video player"
-    frameborder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-  ></iframe>
-</div>
 
 Perfecto, ahora que tenemos nuestros ingredientes principales, vamos con lo que en realidad nos interesa: **el código**.
 
@@ -390,10 +386,24 @@ while True:
 
 Borra la pantalla, ejecuta cada partícula varias veces (para crear trazos), actualiza la pantalla y desplaza el tiempo del noise (`t`) para dar sensación de movimiento.
 
+<div class="w-full aspect-video mt-4 mb-4">
+  <iframe
+    class="w-full h-full"
+    src="https://www.youtube.com/embed/nER9SJAv__Y"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+</div>
+
+`*Nota= La musica parece de un nerd Abuelo 🧓 ¡sorry!`
+
 **Reflexión final**
-Qué bueno es ser lo suficientemente curiosos como para perseguir estas ideas. Llegamos al final.
+
+Qué bueno es ser lo suficientemente curiosos como para perseguir estas ideas.
 Espero haber aportado algo a quien sea que este proyecto haya traído hasta acá.
 No duden en escribirme si necesitan ayuda con algo.
 
-**Nos vemos en la próxima extraña idea que se me ocurra.
-¡Bye!**
+Nos vemos en la próxima extraña idea que se me ocurra.
+¡Bye!
