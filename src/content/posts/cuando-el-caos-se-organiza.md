@@ -43,8 +43,6 @@ El gran problema aparece con su capacidad de procesamiento. Aunque el Arduino Un
 
 Hice algunas pruebas y logré desplazar un conjunto de líneas de forma sinusoidal, pero no es nuestro objetivo. Nosotros necesitamos Perlin noise.
 
-Sin embargo, estamos limitados por la potencia del Arduino y por el lenguaje: aunque eficiente, al ser tan bajo nivel, es complejo de entender.
-
 <div class="w-full aspect-video">
   <iframe
     class="w-full h-full"
@@ -56,7 +54,11 @@ Sin embargo, estamos limitados por la potencia del Arduino y por el lenguaje: au
   ></iframe>
 </div>
 
-No lo pensé más y decidí cambiar de dispositivo. Buscando un poco, encontré algo más “potente” y aún más pequeño: **Raspberry Pi Pico 2 W**.
+Sin embargo, estamos limitados por la potencia del Arduino y por el lenguaje: aunque eficiente, al ser tan bajo nivel, es complejo de entender.
+
+No lo pensé más y decidí cambiar de dispositivo. Buscando un poco, encontré algo más “potente” y aún más pequeño: **Raspberry Pi Pico  W**.
+
+![Raspeberry Pi pico w Image](/uploads/rp-pi-pico-2-w.jpg "Raspeberry Pi pico w Image")
 
 Este dispositivo es más versátil y sencillo de usar, ya que permite programar en Python. De todas las opciones que investigué, la que mejor se adaptaba a mi estilo fue MicroPython en Thonny, y lo mejor: todo es software libre, algo muy interesante.
 
@@ -66,7 +68,11 @@ Este dispositivo es más versátil y sencillo de usar, ya que permite programar 
 
 A diferencia de Arduino, donde el IDE compila el código a C/C++ y lo transforma, resultando complejo recuperar el código si no lo guardas, en MicroPython escribes el script directamente y puedes recuperarlo del microcontrolador si no lo guardaste localmente.
 
+![Displays para microcontroladores](/uploads/displays_for_microcontrollers.jpg "Displays")
+
 En cuanto a la pantalla, hay varios dispositivos clásicos muy famosos para proyectos con microprocesadores, pero el que creo que mejor funciona por precio, funcionalidad y tamaño es la **OLED de 1,3 pulgadas con driver SH1106**.
+
+![OLED de 1,3 pulgadas con driver SH1106](/uploads/oled_1.3_sh1106.jpg "OLED de 1,3 pulgadas con driver SH1106")
 
 Su resolución es de 128×64 y ofrece un brillo excelente.
 
