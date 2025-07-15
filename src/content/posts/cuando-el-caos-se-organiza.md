@@ -2,7 +2,7 @@
 title: Cuando el caos se organiza:Simulando particulas en un microcontrolador
 tagline: Construyendo Flow Fields en una Raspberry Pi
 promt: Imagen de una pantalla oled usada para el proyecto dibujando Vector Trails
-thumbnail: /uploads/img_9491.gif
+thumbnail: /uploads/img_4822.gif
 author: Israel paucar
 refe:
   - link: https://en.wikipedia.org/wiki/Raspberry_Pi
@@ -31,15 +31,30 @@ Ahora el reto es más grande porque no tengo mucho conocimiento de cómo llevarl
 
 Desde hace algún tiempo he estado experimentando con estos dispositivos pequeños: Raspberry Pi, Arduino y ESP32.
 
+![Tipos de Microcontroladres](/uploads/microcontroladores_opciones.jpg "Microcontroladores")
+
 No lo tengo muy claro, pero he descubierto algunas cosas.
 
 Mi primer intento fue con un Arduino Uno. Arduino utiliza una versión simplificada de C++ —es decir, un lenguaje amigable para facilitar el trabajo con este dispositivo—, lo que lo hace eficiente.
 
 El gran problema aparece con su capacidad de procesamiento. Aunque el Arduino Uno es un dispositivo increíblemente eficiente (más aún con C++), las librerías para controlar pantallas no suelen estar preparadas para proyectos con cálculos complejos como Perlin noise. Quizás esas operaciones no tienen mucho sentido para usos funcionales típicos.
 
+![Arduino Microcontrolador](/uploads/arduino-uno.jpg "Arduino Microcontrolador")
+
 Hice algunas pruebas y logré desplazar un conjunto de líneas de forma sinusoidal, pero no es nuestro objetivo. Nosotros necesitamos Perlin noise.
 
 Sin embargo, estamos limitados por la potencia del Arduino y por el lenguaje: aunque eficiente, al ser tan bajo nivel, es complejo de entender.
+
+<div class="w-full aspect-video">
+  <iframe
+    class="w-full h-full"
+    src="https://www.youtube.com/embed/IAzw2O1Z1yQ"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+</div>
 
 No lo pensé más y decidí cambiar de dispositivo. Buscando un poco, encontré algo más “potente” y aún más pequeño: **Raspberry Pi Pico 2 W**.
 
@@ -326,7 +341,6 @@ def check_edges(self):
 
 Evita errores cuando las partículas salen del área visible.
 
-
 **Generación de partículas:**
 
 ```python
@@ -336,7 +350,6 @@ for i in range(num):
     speed = urandom.uniform(0.5, 3)
     p = Particle(x, y, speed)
     particles.append(p)
-
 ```
 
 Cada partícula se instancia con una posición y velocidad aleatoria y se guarda en un array.
@@ -355,7 +368,6 @@ while True:
 ```
 
 Borra la pantalla, ejecuta cada partícula varias veces (para crear trazos), actualiza la pantalla y desplaza el tiempo del noise (`t`) para dar sensación de movimiento.
-
 
 **🧠 Reflexión final**
 Qué bueno es ser lo suficientemente curiosos como para perseguir estas ideas. Llegamos al final.
