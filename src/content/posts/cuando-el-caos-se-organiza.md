@@ -2,7 +2,7 @@
 title: Cuando el caos se organiza:Simulando particulas en un microcontrolador
 tagline: Construyendo Flow Fields en una Raspberry Pi
 promt: Imagen de una pantalla oled usada para el proyecto dibujando Vector Trails
-thumbnail: /uploads/img_9491.gif
+thumbnail: /uploads/img_4822.gif
 author: Israel paucar
 refe:
   - link: https://en.wikipedia.org/wiki/Raspberry_Pi
@@ -27,9 +27,13 @@ tags:
   - coding
   - art
 ---
+<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://player.vimeo.com/video/1101629300?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share" style="position:absolute;top:0;left:0;width:100%;height:100%;" title="Vector trails - raspberry pi pico"></iframe></div><script src="https://player.vimeo.com/api/player.js"></script>
+
 Ahora el reto es más grande porque no tengo mucho conocimiento de cómo llevarlo a cabo. 
 
 Desde hace algún tiempo he estado experimentando con estos dispositivos pequeños: Raspberry Pi, Arduino y ESP32.
+
+![Tipos de Microcontroladres](/uploads/microcontroladores_opciones.jpg "Microcontroladores")
 
 No lo tengo muy claro, pero he descubierto algunas cosas.
 
@@ -37,11 +41,28 @@ Mi primer intento fue con un Arduino Uno. Arduino utiliza una versión simplific
 
 El gran problema aparece con su capacidad de procesamiento. Aunque el Arduino Uno es un dispositivo increíblemente eficiente (más aún con C++), las librerías para controlar pantallas no suelen estar preparadas para proyectos con cálculos complejos como Perlin noise. Quizás esas operaciones no tienen mucho sentido para usos funcionales típicos.
 
+![Arduino Microcontrolador](/uploads/arduino-uno.jpg "Arduino Microcontrolador")
+
 Hice algunas pruebas y logré desplazar un conjunto de líneas de forma sinusoidal, pero no es nuestro objetivo. Nosotros necesitamos Perlin noise.
+
+![Arduino Uno Sin offset animation](/uploads/arduino-anim-sin.jpg "Arduino Uno ")
+
+<div class="w-full aspect-video mt-2 mb-2">
+  <iframe
+    class="w-full h-full"
+    src="https://www.youtube.com/embed/IAzw2O1Z1yQ"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+</div>
 
 Sin embargo, estamos limitados por la potencia del Arduino y por el lenguaje: aunque eficiente, al ser tan bajo nivel, es complejo de entender.
 
-No lo pensé más y decidí cambiar de dispositivo. Buscando un poco, encontré algo más “potente” y aún más pequeño: **Raspberry Pi Pico 2 W**.
+No lo pensé más y decidí cambiar de dispositivo. Buscando un poco, encontré algo más “potente” y aún más pequeño: **Raspberry Pi Pico  W**.
+
+![Raspeberry Pi pico w Image](/uploads/rp-pi-pico-2-w.jpg "Raspeberry Pi pico w Image")
 
 Este dispositivo es más versátil y sencillo de usar, ya que permite programar en Python. De todas las opciones que investigué, la que mejor se adaptaba a mi estilo fue MicroPython en Thonny, y lo mejor: todo es software libre, algo muy interesante.
 
@@ -51,7 +72,11 @@ Este dispositivo es más versátil y sencillo de usar, ya que permite programar 
 
 A diferencia de Arduino, donde el IDE compila el código a C/C++ y lo transforma, resultando complejo recuperar el código si no lo guardas, en MicroPython escribes el script directamente y puedes recuperarlo del microcontrolador si no lo guardaste localmente.
 
+![Displays para microcontroladores](/uploads/displays_for_microcontrollers.jpg "Displays")
+
 En cuanto a la pantalla, hay varios dispositivos clásicos muy famosos para proyectos con microprocesadores, pero el que creo que mejor funciona por precio, funcionalidad y tamaño es la **OLED de 1,3 pulgadas con driver SH1106**.
+
+![OLED de 1,3 pulgadas con driver SH1106](/uploads/oled_1.3_sh1106.jpg "OLED de 1,3 pulgadas con driver SH1106")
 
 Su resolución es de 128×64 y ofrece un brillo excelente.
 
@@ -124,6 +149,17 @@ Hay que mencionar que ChatGPT puede ser una gran herramienta que nos da una pata
 - - -
 
 ## ¡Vamos a cocinar!
+
+<div class="w-full aspect-video">
+  <iframe
+    class="w-full h-full"
+    src="https://www.youtube.com/embed/nER9SJAv__Y"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+</div>
 
 Perfecto, ahora que tenemos nuestros ingredientes principales, vamos con lo que en realidad nos interesa: **el código**.
 
@@ -326,7 +362,6 @@ def check_edges(self):
 
 Evita errores cuando las partículas salen del área visible.
 
-
 **Generación de partículas:**
 
 ```python
@@ -336,7 +371,6 @@ for i in range(num):
     speed = urandom.uniform(0.5, 3)
     p = Particle(x, y, speed)
     particles.append(p)
-
 ```
 
 Cada partícula se instancia con una posición y velocidad aleatoria y se guarda en un array.
@@ -356,8 +390,7 @@ while True:
 
 Borra la pantalla, ejecuta cada partícula varias veces (para crear trazos), actualiza la pantalla y desplaza el tiempo del noise (`t`) para dar sensación de movimiento.
 
-
-**🧠 Reflexión final**
+**Reflexión final**
 Qué bueno es ser lo suficientemente curiosos como para perseguir estas ideas. Llegamos al final.
 Espero haber aportado algo a quien sea que este proyecto haya traído hasta acá.
 No duden en escribirme si necesitan ayuda con algo.
