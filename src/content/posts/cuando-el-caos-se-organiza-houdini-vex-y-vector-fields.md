@@ -25,9 +25,7 @@ tags:
 ---
 Como sabemos, en Houdini podemos realizar una misma tarea de muchas formas: algunas óptimas y otras no tan eficientes. Por lo tanto, siempre, como **rule of thumb**, lo que nos indicará el camino es tratar de optimizar el procesamiento y mantenerlo eficiente.
 
-Quiero plantear dos formas de hacer esto: una [versión rápida](#usando-volume-trail), para quienes no quieran adentrarse tanto en el tema, y otra [versión más profunda](#usando-vex-y-wrangles), donde exploraremos las similitudes con otros procesos.
-
-# video
+Quiero plantear dos formas de hacer esto: una [**versión rápida**](#usando-volume-trail), para quienes no quieran adentrarse tanto en el tema, y otra [**versión más profunda**](#usando-vex-y-wrangles), donde exploraremos las similitudes con otros procesos.
 
 <div class="w-full m-auto mt-6">
   <iframe  
@@ -46,9 +44,9 @@ Pero… ¿por qué extendida? Seguro estás pensando: ¿Es más compleja, con c�
 
 ¿Cuál sería el objetivo? Bueno, lo complicamos con un solo propósito: **tratar de mantener el control total sobre lo que sucede a lo largo de toda la cadena**. Y esto nos da una gran ventaja: en cualquier momento, durante la construcción de nuestro sistema, podemos modificarlo y personalizarlo para crear efectos derivados.
 
-O sea, en síntesis, tenemos mayor control sobre el resultado final, aunque la complejidad es más alta, lo cual mueve la aguja de equilibrio que nos marca nuestra máxima de óptimo y simple. Quizás para algún efecto que no sea principal esto resulte demasiado, pero para comportamientos más complejos y personalizados necesitamos tener este nivel de control.
+O sea, en síntesis, tenemos **mayor control sobre el resultado final**, aunque la complejidad es más alta, lo cual mueve la aguja de equilibrio que nos marca nuestra máxima de óptimo y simple. Quizás para algún efecto que no sea principal esto resulte demasiado, pero para comportamientos más complejos y personalizados necesitamos tener este nivel de control.
 
-Sin embargo, podemos encontrar niveles intermedios gracias a la gran cualidad modular o nodal de Houdini.
+Sin embargo, podemos encontrar **niveles intermedios** gracias a la gran cualidad modular o nodal de Houdini.
 
 Estuve probando toda esta semana algunos caminos posibles y me topé con varias alternativas que están muy interesantes. *Siempre quiero recalcar que toda la información provista en este blog debe ser puesta en duda y llevada a la práctica: así aprenderemos todos.*
 
@@ -110,7 +108,7 @@ for (int i = 0; i < trail; i++) {
 }
 ```
 
-Esta parte nos puede recordar un poco a nuestro código en **p5.js**. En VEX es posible crear funciones personalizadas para procesar geometría, muy parecido a lo que hacíamos con las clases en **Processing**.
+Esta parte nos puede recordar un poco a nuestro código en [**p5.js**](https://israpaucar.com/blog/cuando-el-caos-se-organiza-p5js-particulas-con-rumbo/). En VEX es posible crear funciones personalizadas para procesar geometría, muy parecido a lo que hacíamos con las clases en [**Processing**](https://israpaucar.com/blog/cuando-el-caos-se-organiza-p5js-particulas-con-rumbo/).
 
 Pero esta vez vamos a continuar de la manera más tradicional, para mantenerlo simple y eficiente.
 
@@ -237,7 +235,7 @@ Posteriormente, podemos renderizarlos como **strands** y obtener hermosos result
 
 Bien, hemos llegado lejos, y sé que puede ser difícil entender todo esto de una sola vez, pero creo que son técnicas muy valiosas para darle un valor agregado a nuestras creaciones, ya sea en **Houdini** o en cualquier otro programa que nos permita aplicar una lógica similar.
 
-Con esto concluimos la **Parte 2** de nuestra serie, y es momento de hacer algo más tangible.
+Con esto concluimos la parte 2 de nuestra serie, y es momento de hacer algo más tangible.
 
 En el siguiente post, vamos a recrear exactamente lo mismo usando un **Raspberry Pi** y **MicroPython**.
 
