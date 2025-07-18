@@ -90,6 +90,7 @@ const nextPost = posts[index - 1] || null;
       <div class="w-9/10 mx-auto grid dark:text-lgt/90 justify-center sm:text-lg text-xl markdown prose dark:prose-invert max-w-none mt-6 mb-6">
         <Content />
       </div>
+      
       <div class="flex justify-between mt-8">
         {prevPost ? (
           <a href={`/blog/${prevPost.slug}`} class="text-blue-600 hover:text-brand  hover:underline">

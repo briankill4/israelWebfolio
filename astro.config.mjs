@@ -3,6 +3,7 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import remarkGfm from 'remark-gfm'
 import remarkBreaks from 'remark-breaks'
+import { remarkReadingTime } from '/public/js/readingTime.mjs';
 
 
 
