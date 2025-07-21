@@ -13,7 +13,22 @@ import Contacto from '../components/contacto.astro';
         
         <!-- Texto e íconos a la izquierda -->
         <div class="info w-full  text-text  dark:text-lgt space-y-4 text-[1.4rem] font-[300] sm:font-[200]">
-          <p class="text-xl font-semibold text-[3rem]">About me</p>
+          <p class="font-[800] text-[2.3rem]">About me<span class="cursor">_</span></p>
+          
+          <style>
+          .titulo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            font-family: monospace;
+          }
+          .cursor {
+            animation: blink 1s steps(1) infinite;
+          }
+          @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+          }
+          </style>
           <p>
             I was born in Ecuador in 1989 and grew up surrounded by mountains, always curious about how things worked. As a kid, I loved taking things apart (not always a good idea) and filming with my dad’s camera.
 

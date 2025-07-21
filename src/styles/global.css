@@ -14,7 +14,6 @@
     font-weight: 800;
     text-align: center;
     margin-top: 30px;
-    margin-bottom: 30px;
   }
 }
 
@@ -74,9 +73,16 @@ body{
 
 .markdown img {
   margin: 1.5rem 0;
-  max-width: 60%;
+  max-width: 90%;
   justify-content: center;
   margin: auto;
+}
+@media (prefers-color-scheme: dark) {
+  .markdown img {
+    background-color: white;
+    padding: 0.1rem; /* opcional, si querés que no toque el borde */
+    border-radius: 0.3rem; /* opcional, para suavizar bordes */
+  }
 }
 
 /* UI por encima del canvas */

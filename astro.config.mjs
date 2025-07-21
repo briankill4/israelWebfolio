@@ -6,7 +6,6 @@ import remarkBreaks from 'remark-breaks'
 
 
 
-
 // https://astro.build/config
 export default defineConfig({
   markdown: { 
