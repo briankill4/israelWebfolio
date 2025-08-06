@@ -36,7 +36,17 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
         </style>
           <p class="text-[3vh] sm:text-[6vh] text-text font-[300] dark:text-lgt leading-none">Ideas y experimentos nacidos del cruce entre creatividad y computadoras.</p>
         </div>
-        
+
+        <div class="w-full m-auto mt-6 mb-15">
+        <iframe
+          title="vimeo-player" 
+          src="https://player.vimeo.com/video/1107809132?h=e81b904230" class="w-full sm:h-[400px] h-[250px] border-0" referrerpolicy="strict-origin-when-cross-origin" 
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   
+          allowfullscreen>
+        </iframe>
+        </div>
+
+
       <div class="px-8 mx-auto lg:max-w-screen-xl  sm:max-w-xl md:max-w-full ">
         <div class="grid gap-x-8 gap-y-10 sm:gap-y-16 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {posts.map(post => (

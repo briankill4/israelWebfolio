@@ -3,7 +3,7 @@
 
 //init particles
 let num = 2000;
-let noiseScale=200, noiseStrength=1.3;
+let noiseScale=800, noiseStrength=1.8;
 let particles = [num];
 let isd = 0;
 
@@ -51,7 +51,7 @@ function setup() {
   btnWork.mouseOver(()  => hoverText = 'WORK');
   btnWork.mouseOut(()   => hoverText = "");
 
-  btnProjects.mouseOver(()  => hoverText = 'RND');
+  btnProjects.mouseOver(()  => hoverText = 'BLOG');
   btnProjects.mouseOut(()   => hoverText = "");
 
   btnContact.mouseOver(()   => hoverText = 'CONTACT');
