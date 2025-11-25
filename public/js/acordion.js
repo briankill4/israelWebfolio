@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
           p.classList.add('flex-1');
         });
 
-        // Expandir el actual
+        // Expandir el actual actual
         panel.classList.add('expanded');
         panel.classList.remove('flex-1');
         panel.classList.add('flex-12');
