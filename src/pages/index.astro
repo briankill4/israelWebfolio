@@ -37,7 +37,7 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
         
       <!-- Botones inferiores -->
       <div id="landing-ui">
-        <button id="btn-reel" onclick="location.href='/reel'">REEL</button>
+        <button id="btn-reel" onclick="location.href='/reel_modular'">REEL</button>
         <button id="btn-work" onclick="location.href='/work'" >WORK</button>
         <button id="btn-projects" onclick="location.href='/blog'">BLOG</button>
         <button id="btn-contact" onclick="location.href='/contact'">CONTACT</button>
@@ -52,8 +52,8 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
         <div class="info w-full md:w-1/2 text-text dark:text-lgt space-y-4 text-[2rem] font-[200]">
           <p class="text-xl font-semibold text-[3rem]">Hello! 👋</p>
           <p>
-            I'm Isra, a Houdini artist from Ecuador. Passionate about the blend of art, science, and tech.
-            VFX work for Disney, HBO, Netflix, Apple TV+, and more.
+            I'm Isra, I create procedural tools and simulations that bridge art and technology.
+            work for Disney, HBO, Netflix, Apple TV+, and more.
           </p>
 
           <div class="social-links flex gap-4 mt-4 dark:invert">
@@ -89,14 +89,6 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
     My recent posts
     <span class="cursor">_</span>
   </h2>
-  <div class="w-full m-auto mt-6 mb-15">
-        <iframe
-          title="vimeo-player" 
-          src="https://player.vimeo.com/video/1107809132?h=e81b904230" class="w-full sm:h-[400px] h-[250px] border-0" referrerpolicy="strict-origin-when-cross-origin" 
-          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   
-          allowfullscreen>
-        </iframe>
-        </div>
   <style>
     .titulo {
       font-size: 2.5rem;
@@ -111,7 +103,14 @@ posts.sort((a, b) => new Date(b.data.date) - new Date(a.data.date));
       50% { opacity: 0; }
     }
   </style>
-
+ <div class="w-full m-auto mt-6 mb-15">
+        <iframe
+          title="vimeo-player" 
+          src="https://player.vimeo.com/video/1107809132?h=e81b904230" class="w-full sm:h-[400px] h-[250px] border-0" referrerpolicy="strict-origin-when-cross-origin" 
+          allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"   
+          >
+        </iframe>
+        </div>
   <div class=" grid justify-center gap-8 sm:grid-cols-2 lg:grid-cols-3 mb-30">
     {posts.map(post => (
       <a 

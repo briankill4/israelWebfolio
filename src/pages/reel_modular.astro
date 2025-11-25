@@ -1,0 +1,181 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/HeaderPages.astro';
+import Footer from '../components/footer.astro';
+
+---
+
+<BaseLayout title="Israel Paucar | REEL" description="Portfolio interactivo de Israel Paucar, artista VFX. Houdini artist, creative coding">
+    
+    <header class="flex flex-col"><Header page="REEL"/></header>
+    <body>
+        <div class="h-screen flex flex-col">
+            <!-- FX -->
+            <div class="accordion flex-1 flex overflow-hidden cursor-pointer bg-text">
+                <div class="panel-text text-center transition-all duration-430 w-screen ">
+                    <p class="text-5xl font-bold text-byellow">FX</p>
+                    <p class="text-sm text-gray-300 ">Simulaciones, destrucción y efectos dinámicos</p>
+                    <!-- VIDEO -->
+                    <div class="video-wrapper relative opacity-0 pointer-events-none delay-200 transition-all duration-400" >
+                        <p class="text-sm text-gray-300 ">FX REEL 2024</p>
+                        <div class="relative w-full" style="aspect-ratio:16/9;">
+                            <iframe 
+                                    loading="lazy" title="Gumlet video player"
+                                    src="https://play.gumlet.io/embed/6859cb36beff34efeff4bc51?preload=false&autoplay=false&loop=false&background=false&disable_player_controls=false"
+                                    style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+                                    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+                            </iframe>
+                        </div>
+
+                        <div class="dark:bg-white/10 dark:text-lgt w-8/9 mx-auto bg-white/90 rounded-2xl p-5 grid grid-cols-1 md:grid-cols-2 gap-10 ">
+                        <!-- Video Properties (Izquierda) -->
+                            <div class="videoproperties dark:space-y-4 text-left ">
+                                <div>
+                                <p class="font-bold">Featured Studios:</p>
+                                <p class="text-x font-[200]">Netflix, Disney, Prime Video, Star+, AppleTv.</p>
+                                </div>
+
+                                <div>
+                                <p class="font-bold">VFX Production by:</p>
+                                <p class="text-x font-[200]">Boat, k&S.</p>
+                                </div>
+
+                                <div>
+                                <p class="font-bold">My role:</h2>
+                                <p class="text-x font-[200]">Procedural vegetation, pyro simulations, Vellum cloth, RBD destruction, and custom snow and decay systems.</p>
+                                </div>
+
+                                <div>
+                                <p class="font-bold">Music:</p>
+                                <p class="text-x font-[200]">GLORYHAMMER.</p>
+                                </div>
+                            </div>
+
+                            <!-- Descripción (Derecha) -->
+                            <div class="aboutvideo text-left md:text-left flex items-center">
+                                <p class="text-1rem font-semibold">
+                                FX reel showcasing work done in Houdini: Includes production shots and personal explorations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+
+            <!-- TD 
+            <div class="accordion flex-1 flex overflow-hidden cursor-pointer bg-lgt">
+                <div class="panel-text text-center transition-all duration-430 w-screen ">
+                    <p class="text-5xl font-bold text-bgreen">TD</p>
+                    <p class="subtitle-text text-sm text-gray-500 ">Herramientas, setups y scripts técnicos</p>
+
+                    <!-- VIDEO 
+                    <div class="video-wrapper relative opacity-0 pointer-events-none delay-200 transition-all duration-400" >
+                        <p class="text-sm text-gray-500 mb-3 ">TD REEL 2025</p>
+                        <div class="relative w-full mb-3" style="aspect-ratio:16/9;">
+                            <iframe 
+                                    loading="lazy" title="Gumlet video player"
+                                    src="https://play.gumlet.io/embed/68ed1d98413106a9eb4b1a23?background=false&autoplay=false&loop=false&disableControls=false"
+                                    style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+                                    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+                            </iframe>
+                        </div>
+
+                        <div class="dark:bg-white/10 dark:text-lgt w-8/9 mx-auto rounded-2xl p-5 grid grid-cols-1 md:grid-cols-2 gap-10 ">
+                        <!-- Video Properties (Izquierda) 
+                            <div class="videoproperties dark:space-y-4 text-left ">
+                                <div>
+                                <p class="font-bold">Featured Studios:</p>
+                                <p class="text-x font-[200]">Netflix, Disney, Prime Video, Star+, AppleTv.</p>
+                                </div>
+
+                                <div>
+                                <p class="font-bold">VFX Production by:</p>
+                                <p class="text-x font-[200]">Boat, k&S.</p>
+                                </div>
+
+                                <div>
+                                <p class="font-bold">My role:</h2>
+                                <p class="text-x font-[200]">Procedural vegetation, pyro simulations, Vellum cloth, RBD destruction, and custom snow and decay systems.</p>
+                                </div>
+
+                                <div>
+                                <p class="font-bold">Music:</p>
+                                <p class="text-x font-[200]">GLORYHAMMER.</p>
+                                </div>
+                            </div>
+
+                            <!-- Descripción (Derecha) 
+                            <div class="aboutvideo text-left md:text-left flex items-center">
+                                <p class="text-1rem font-semibold">
+                                FX reel showcasing work done in Houdini: Includes production shots and personal explorations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+-->
+            <!-- comp -->
+            <div class="accordion flex-1 flex overflow-hidden cursor-pointer bg-bblue">
+                <div class="panel-text text-center transition-all duration-430 w-screen ">
+                    <p class="text-5xl font-bold text-lgt">COMP</p>
+                    <p class="text-sm text-gray-200 ">Integración, color y acabado final</p>
+                                    <!-- VIDEO -->
+                    <div class="video-wrapper relative opacity-0 pointer-events-none delay-200 transition-all duration-400" >
+                        <p class="text-sm text-gray-500 mb-3 ">TD REEL 2025</p>
+                        <div class="relative w-full mb-3" style="aspect-ratio:16/9;">
+                            <iframe 
+                                    loading="lazy" title="Gumlet video player"
+                                    src="https://play.gumlet.io/embed/68ed1d98413106a9eb4b1a23?background=false&autoplay=false&loop=false&disableControls=false"
+                                    style="border:none; position: absolute; top: 0; left: 0; height: 100%; width: 100%;"
+                                    allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture; fullscreen;">
+                            </iframe>
+                        </div>
+
+                        <div class="dark:bg-white/10 bg-lgt/80 dark:text-lgt w-8/9 mx-auto rounded-2xl p-5 grid grid-cols-1 md:grid-cols-2 gap-10 ">
+                        <!-- Video Properties (Izquierda) -->
+                            <div class="videoproperties dark:space-y-4 text-left ">
+                                <div>
+                                <p class="font-bold">Featured Studios:</p>
+                                <p class="text-x font-[200]">Netflix, Disney, Prime Video, Star+, AppleTv.</p>
+                                </div>
+
+                                <div>
+                                <p class="font-bold">VFX Production by:</p>
+                                <p class="text-x font-[200]">Boat, k&S.</p>
+                                </div>
+
+                                <div>
+                                <p class="font-bold">My role:</h2>
+                                <p class="text-x font-[200]">Procedural vegetation, pyro simulations, Vellum cloth, RBD destruction, and custom snow and decay systems.</p>
+                                </div>
+
+                                <div>
+                                <p class="font-bold">Music:</p>
+                                <p class="text-x font-[200]">GLORYHAMMER.</p>
+                                </div>
+                            </div>
+
+                            <!-- Descripción (Derecha) -->
+                            <div class="aboutvideo text-left md:text-left flex items-center">
+                                <p class="text-1rem font-semibold">
+                                FX reel showcasing work done in Houdini: Includes production shots and personal explorations.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        
+        
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        <script src="js/acordion.js" defer></script>
+    </body> 
+    <footer><Footer/></footer>
+   
+</BaseLayout>

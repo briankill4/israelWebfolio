@@ -1,0 +1,9 @@
+---
+const { label = "titulo" , description = "Aqui va tu descripcion"  } = Astro.props;
+---
+<section class="bg-text flex flex-col justify-center">
+    <p class="text-4xl text-lgt font-bold text-center dark:text-lgt">{label}
+    </p>
+    <p class="text-4xl text-lgt text-center  text-[1.3rem] font-[200] dark:text-lgt">{description}
+    </p>
+</section>

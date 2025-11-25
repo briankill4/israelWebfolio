@@ -1,10 +1,12 @@
 @import "tailwindcss";
+@plugin "daisyui";
 @import "@fontsource-variable/jetbrains-mono";
 
 @theme {
     --color-brand: #007FFF;
     --color-bblue: #244CE4;
     --color-byellow: #FAC748;
+    --color-bgreen: #5FAD56;
     --color-text: #040F16;
     --color-lgt: #FFFCFF;  
 }
@@ -22,6 +24,31 @@
     @apply w-full overflow-x-auto ;
   }
 }
+
+/* aniamcion acordion */
+.accordion {
+  transition: flex 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0.2s;
+}
+
+.accordion.expanded .panel-text {
+transform: translate(0,3%);
+}
+
+.panel-text {
+transform: translate(0,35%);
+}
+
+.accordion.expanded .video-wrapper {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.video-wrapper {
+  transform: translateY(20px);
+}
+
 
 .prose a {
   @apply hover:text-blue-700 underline;
